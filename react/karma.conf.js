@@ -96,5 +96,5 @@ module.exports = function(config) {
       // output coverage results as html
       type: 'html'
     }
-  })
-}
+  });
+};
