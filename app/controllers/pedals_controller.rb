@@ -1,6 +1,7 @@
 class PedalsController < ApplicationController
   def index
-    @pedals = Pedal.all
   end
 
+  def show
+  end
 end

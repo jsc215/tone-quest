@@ -6,9 +6,8 @@ const NavBar = props => {
   return(
     <div>
       <BackButton />
-      <Link to='/pedals'> HOME </Link>
-      <h1 className="page-title"> Pedals</h1>
-      {props.children}
+      <Link to='/'> HOME </Link>
+        {props.children}
     </div>
   )
 }

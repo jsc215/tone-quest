@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PedalTileComponent from '../Components/PedalTileComponent';
-
+import PedalTile from '../Components/PedalTile';
+import { Route, IndexRoute, Router, browserHistory, Link, Redirect } from 'react-router';
 
 class PedalsIndexContainer extends React.Component {
   constructor(props) {
@@ -11,9 +11,7 @@ class PedalsIndexContainer extends React.Component {
   }
 
   componentDidMount () {
-    fetch('/api/v1/pedals',{
-      credentials: 'same-origin'
-    })
+    fetch('/api/v1/pedals')
     .then(response => {
       if (response.ok) {
         return response;
@@ -32,26 +30,26 @@ class PedalsIndexContainer extends React.Component {
   .catch(error => console.error(`Error in fetch: ${error.message}`));
 }
   render() {
-
-    let pedals = this.state.pedals.map(pedal => {
-      return (
-        <PedalTileComponent
+    let pedals = this.state.pedals.map(pedal=>{
+      return(
+        <PedalTile
           key={pedal.id}
           id={pedal.id}
           pedalName={pedal.name}
           pedalImage={pedal.image_url}
           pedalType={pedal.effect_type}
         />
-      );
+      )
     });
-
-    return (
-      <div>
-        {pedals}
-      </div>
-    );
+      return (
+        <div>
+          {pedals}
+        </div>
+      )
+    }
   }
-}
+
+
 
 
 
