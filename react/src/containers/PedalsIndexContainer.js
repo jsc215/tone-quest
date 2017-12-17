@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PedalTile from '../Components/PedalTile';
-import { Route, IndexRoute, Router, browserHistory, Link, Redirect } from 'react-router';
+import PedalTile from '../components/PedalTile';
+import { Route, IndexRoute, Router, browserHistory, Link} from 'react-router';
 
 class PedalsIndexContainer extends React.Component {
   constructor(props) {
@@ -39,13 +39,13 @@ class PedalsIndexContainer extends React.Component {
           pedalImage={pedal.image_url}
           pedalType={pedal.effect_type}
         />
-      )
+      );
     });
       return (
         <div>
           {pedals}
         </div>
-      )
+      );
     }
   }
 
