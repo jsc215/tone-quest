@@ -1,5 +1,4 @@
 class Api::V1::PedalsController < ApplicationController
-
   def index
     pedals = Pedal.all
     render json: pedals
