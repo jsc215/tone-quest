@@ -6,8 +6,8 @@ RSpec.describe PedalsController, type: :controller do
     it 'should render index template' do
       get :index
       expect(response).to render_template ('index')
+    end
   end
-end
 
   describe 'GET show' do
     it 'should render show template' do
