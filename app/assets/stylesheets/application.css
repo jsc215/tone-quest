@@ -30,8 +30,8 @@ img {
   max-width: 100%;
 }
  #pedalTile img {
-   border-color: red;
+   /* border-color: red;  */
    border-style: solid;
-   max-width: 200px%;
+   max-width: 200px;
    max-height:120px;
 }
