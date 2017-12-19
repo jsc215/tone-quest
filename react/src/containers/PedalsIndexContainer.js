@@ -42,8 +42,8 @@ class PedalsIndexContainer extends React.Component {
       );
     });
       return (
-        <div>
-          {pedals}
+          <div>
+            {pedals}
         </div>
       );
     }

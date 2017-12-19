@@ -12,5 +12,26 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
  */
-/*= require_foundation
+
+
+
+
+#pedalTile{
+ margin: 0px;
+ margin: 3px;
+ border-color: black;
+ border-style: solid;
+ text-align: center;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+ #pedalTile img {
+   border-color: red;
+   border-style: solid;
+   max-width: 200px%;
+   max-height:120px;
+}
