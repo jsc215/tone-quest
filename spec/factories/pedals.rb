@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :pedal do
-    sequence(:name) { |n| "Boss Blues Driver #{n}"}
+    sequence(:name) { |n| "Boss Blues Driver #{n}" }
     effecttype_id 1
     image_url 'https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg'
     description 'best pedal in the world'
