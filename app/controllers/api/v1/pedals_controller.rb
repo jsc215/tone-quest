@@ -21,5 +21,5 @@ private
       :effecttype_id,
       :description,
       :image_url
-    )
+      )
   end
