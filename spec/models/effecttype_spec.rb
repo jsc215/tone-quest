@@ -1,5 +1,6 @@
 require 'rails_helper'
+require 'spec_helper'
 
-Rspec.describe Effecttype, type: :model do
+RSpec.describe Effecttype, type: :model do
   it { should have_valid(:name).when('Overdrive') }
 end

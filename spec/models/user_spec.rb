@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe User, type: :model do
   it "creates or updates itself from an oauth hash" do
