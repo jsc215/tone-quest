@@ -5,7 +5,8 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
   describe 'GET index' do
     it 'should render json object of all pedals' do
-      pedal = FactoryBot.create(:pedal)
+      e1 = FactoryBot.create(:effecttype)
+      p1 = FactoryBot.create(:pedal, effecttype: e1)
       get :index
       json = JSON.parse(response.body)
 
@@ -13,15 +14,16 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
       expect(response.content_type).to eq('application/json')
       expect(json['pedals'].last['name']).to eq('Boss Blues Driver 1')
       expect(json['pedals'].last['description']).to eq('best pedal in the world')
-      expect(json['pedals'].last['effect_type']).to eq('Overdrive')
+      expect(json['pedals'].last['effecttype']['name']).to eq(e1.name)
       expect(json['pedals'].last['image_url']).to eq('https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg')
     end
   end
 
   describe 'GET show' do
     it 'should render json object of one pedal' do
-      pedal = FactoryBot.create(:pedal)
-      get :show, params: { id: pedal.id }
+      e1 = FactoryBot.create(:effecttype)
+      p1 = FactoryBot.create(:pedal, effecttype: e1)
+      get :show, params: { id: p1.id }
       json = JSON.parse(response.body)
 
       expect(response.status).to eq 200
@@ -29,7 +31,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
       expect(json['pedal']['name']).to eq('Boss Blues Driver 2')
       expect(json['pedal']['description']).to eq('best pedal in the world')
-      expect(json['pedal']['effect_type']).to eq('Overdrive')
+      expect(json['pedal']['effecttype_id']).to eq(e1.id)
       expect(json['pedal']['image_url']).to eq('https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg')
     end
   end

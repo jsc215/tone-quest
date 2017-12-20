@@ -5,11 +5,23 @@ class Api::V1::PedalsController < ApplicationController
   end
 
   def show
-    render json: Pedal.find(params[:id])
+    @pedal = Pedal.find(params[:id])
+    render json: 
+    {
+      pedal: @pedal,
+      effecttypename: @pedal.effecttype.name
+    }
+
   end
 end
-#   def show
-#     pedals = Pedal.find(params[:id])
-#     render json: pedals
-#   end
-# end
+
+private
+
+def pedal_params
+    params.require(:pedal).permit(
+      :name,
+      :effecttype_id,
+      :description,
+      :image_url
+    )
+  end

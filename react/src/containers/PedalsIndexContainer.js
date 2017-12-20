@@ -11,7 +11,9 @@ class PedalsIndexContainer extends React.Component {
   }
 
   componentDidMount () {
-    fetch('/api/v1/pedals')
+    fetch(`/api/v1/pedals`,{
+      credentials: 'same-origin'
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -31,13 +33,14 @@ class PedalsIndexContainer extends React.Component {
 }
   render() {
     let pedals = this.state.pedals.map(pedal=>{
+
       return(
         <PedalTile
           key={pedal.id}
           id={pedal.id}
           pedalName={pedal.name}
           pedalImage={pedal.image_url}
-          pedalType={pedal.effect_type}
+          pedalType={pedal.effecttype.name}
         />
       );
     });

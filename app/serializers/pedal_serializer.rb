@@ -1,7 +1,7 @@
 class PedalSerializer < ActiveModel::Serializer
   attributes  :id,
               :name,
-              :effect_type,
+              :effecttype,
               :image_url,
               :description
 end

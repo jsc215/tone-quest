@@ -6,7 +6,7 @@ class PedalShowContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      pedal:[]
+      pedal: {}
     };
   }
 
@@ -26,24 +26,23 @@ class PedalShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      body.pedal['effecttypename'] = body.effecttypename
+
       this.setState({ pedal: body.pedal });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
   render () {
 
     return (
-      <div>
         <PedalShowTile
           key={this.state.pedal.id}
           id={this.state.pedal.id}
           pedalName={this.state.pedal.name}
-          pedalType={this.state.pedal.effect_type}
+          pedalType={this.state.pedal.effecttypename}
           pedalImage={this.state.pedal.image_url}
           pedalDescription={this.state.pedal.description}
         />
-      </div>
     );
   }
 }

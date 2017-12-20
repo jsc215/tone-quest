@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :pedalboards
+  has_many :users, through: :pedalboards
+
   def self.update_or_create(auth)
     user = User.find_by(uid: auth[:uid]) || User.new
     user.attributes = {
