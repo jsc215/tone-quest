@@ -6,7 +6,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
   describe 'GET index' do
     it 'should render json object of all pedals' do
       e1 = FactoryBot.create(:effecttype)
-      p1 = FactoryBot.create(:pedal, effecttype: e1)
+      FactoryBot.create(:pedal, effecttype: e1)
       get :index
       json = JSON.parse(response.body)
 

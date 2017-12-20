@@ -22,4 +22,4 @@ private
       :description,
       :image_url
     )
-    end
+  end
