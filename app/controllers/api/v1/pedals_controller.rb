@@ -13,13 +13,13 @@ class Api::V1::PedalsController < ApplicationController
   end
 end
 
-private
-
-  def pedal_params
-    params.require(:pedal).permit(
-      :name,
-      :effecttype_id,
-      :description,
-      :image_url
-      )
-  end
+# private
+#
+#   def pedal_params
+#     params.require(:pedal).permit(
+#       :name,
+#       :effecttype_id,
+#       :description,
+#       :image_url
+#       )
+#   end
