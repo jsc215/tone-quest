@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PedalShowTile from '../components/PedalShowTile';
-import { Route, IndexRoute, Router, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 class PedalShowContainer extends Component {
   constructor(props){
@@ -9,10 +9,9 @@ class PedalShowContainer extends Component {
       pedal: {}
     };
   }
-
+debugger
   componentDidMount() {
-    let pedalId = this.props.params.id;
-    fetch(`/api/v1/pedals/${pedalId}`,{
+    fetch(`/api/v1/pedals/${this.props.params.id}`,{
       credentials: 'same-origin'
     })
     .then(response => {
