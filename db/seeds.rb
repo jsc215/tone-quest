@@ -69,7 +69,7 @@ Pedal.create(
 Pedal.create(
   name: "Mercury Flanger",
   effecttype_id: 4,
-  image_url:"http://www.sourceaudio.net/images/products/productview-os-mf-face.png"
+  image_url:"http://cdn.shopify.com/s/files/1/0888/3684/products/SA240_grande.png?v=1509733992"
 )
 Pedal.create(
   name: "Electro-Harmonix Holy Grail Nano Reverb",

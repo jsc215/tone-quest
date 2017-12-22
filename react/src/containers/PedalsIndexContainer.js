@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PedalTile from '../components/PedalTile';
-import { Route, IndexRoute, Router, browserHistory, Link} from 'react-router';
+import {browserHistory, Link} from 'react-router';
+import PedalFormContainer from './PedalFormContainer';
 
 class PedalsIndexContainer extends React.Component {
   constructor(props) {
@@ -8,8 +9,8 @@ class PedalsIndexContainer extends React.Component {
     this.state = {
       pedals: []
     };
+      // this.handleClick = this.handleClick.bind(this);
   }
-
   componentDidMount () {
     fetch(`/api/v1/pedals`,{
       credentials: 'same-origin'
@@ -31,26 +32,34 @@ class PedalsIndexContainer extends React.Component {
     })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
 }
-  render() {
-    let pedals = this.state.pedals.map(pedal=>{
 
-      return(
-        <PedalTile
-          key={pedal.id}
-          id={pedal.id}
-          pedalName={pedal.name}
-          pedalImage={pedal.image_url}
-          pedalType={pedal.effecttype.name}
-        />
-      );
-    });
-      return (
-          <div>
-            {pedals}
-        </div>
-      );
+// handleClick(event) {
+//     event.preventDefault();
+//     browserHistory.push('/venues/new');
+//   }
+
+    render() {
+
+      let pedals = this.state.pedals.map(pedal=>{
+        return(
+          <PedalTile
+            key={pedal.id}
+            id={pedal.id}
+            pedalName={pedal.name}
+            pedalImage={pedal.image_url}
+            pedalType={pedal.effecttype.name}
+          />
+        );
+      });
+        return (
+          <div className= "grid-x">
+              {pedals}
+            </div>
+
+
+        );
+      }
     }
-  }
 
 
 
