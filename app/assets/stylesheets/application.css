@@ -10,28 +10,94 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ * require_tree .
+ * require_self
  *= require foundation_and_overrides
  */
+.title {
+  font-family: serif;
+  font-size: 5em;
+  text-align: left;
+  color: #83765E;
+  text-shadow: 0 1px 0 #999999, 0 2px 0 #888888,
+             0 3px 0 #777777, 0 4px 0 #666666,
+             0 5px 0 #555555, 0 6px 0 #444444,
+             0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4),
+             0 9px 10px rgba(0, 0, 0, 0.2);
+           }
 
-
-
-
-#pedalTile{
- margin: 0px;
- margin: 3px;
- border-color: black;
- border-style: solid;
- text-align: center;
+.top-bar {
+  background:none;
+  text-align: center;
 }
+
+h2{
+  color: #A97C4E;
+}
+
+body  {
+background-color: black;
+ /* background-image: url(https://i.pinimg.com/originals/62/74/30/6274303d74280ce1406d22f935966dd7.jpg); */
+ background-image: url('tone-quest-background.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+
+}
+ h1{
+  color: #726D55;
+  text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
+}
+
+.title h1 {
+  font-family: serif;
+  text-align: center;
+  color: #83765E;
+}
+/* .breadcrumbs{
+border-style:ridge;
+text-align: center;
+border-style: groove;
+margin: 5px;
+background-color: #3F2625;
+} */
+
+ /* .PedalShowImg{
+  border: 1px solid white;
+} */
+
+form.new-pedal-form.callout{
+  width: 30em;
+}
+
+ p{
+   color:white;
+ }
+
+ .PedalShowImg img{
+  float:center;
+  border: 3px double white;
+  max-width: 30rem;
+  max-height:30rem;
+  margin-bottom: 5px;
+}
+
+.pedalTile{
+  /* border: 3px solid white; */
+  text-align: center;
+   border: 3px double  #442725;
+   padding: 10px;
+   /* margin: 2px; */
+}
+
 img {
   max-height: 100%;
   max-width: 100%;
 }
- #pedalTile img {
-   /* border-color: red;  */
-   border-style: solid;
+ .pedalTile img {
+  /* border: 3px solid white; */
    max-width: 200px;
    max-height:120px;
+   margin-bottom: 3px;
+   /* box-shadow: 10px 10px 20px #aaa; */
 }

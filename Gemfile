@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 # end
 gem 'active_model_serializers'
 gem 'foundation-rails'
+gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'pry'
 gem 'puma', '~> 3.7'
