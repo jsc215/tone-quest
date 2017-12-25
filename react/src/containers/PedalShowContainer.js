@@ -9,7 +9,6 @@ class PedalShowContainer extends Component {
       pedal: {}
     };
   }
-debugger
   componentDidMount() {
     fetch(`/api/v1/pedals/${this.props.params.id}`,{
       credentials: 'same-origin'
@@ -25,7 +24,7 @@ debugger
     })
     .then(response => response.json())
     .then(body => {
-      body.pedal['effecttypename'] = body.effecttypename
+      body.pedal.effecttypename= body.effecttypename;
 
       this.setState({ pedal: body.pedal });
     })

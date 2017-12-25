@@ -151,13 +151,13 @@ class PedalFormContainer extends Component {
                     onChange={this.handleChange}
                   />
                 </div>
-                </div>
+              </div>
+
               <div className="row">
             <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
             <input className="button tiny" type="submit" value="Submit" />
           </div>
         </form>
-
       </div>
 
 

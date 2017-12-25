@@ -35,4 +35,21 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
       expect(json['pedal']['image_url']).to eq('https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg')
     end
   end
+
+  describe 'POST#create' do
+    it 'posts a single pedal' do
+
+      params =
+        {
+          pedal:
+          {
+            name:'test pedal',
+            description:'cool pedal',
+            image_url: 'pedal.png',
+            effecttype_id: 1
+          }
+        }
+      expect {post :create, params: params }.to change(Pedal, :count).by(1)
+    end
+  end
 end
