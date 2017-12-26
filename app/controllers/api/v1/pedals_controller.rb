@@ -34,8 +34,8 @@ private
       :name,
       :effecttype_id,
       :description,
-      :image_url,
-      :user_id
+      :image_url
+
       )
   end
 end
