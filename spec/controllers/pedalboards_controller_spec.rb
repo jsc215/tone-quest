@@ -10,9 +10,9 @@ RSpec.describe PedalboardsController, type: :controller do
   end
 
   describe 'GET show' do
-  it 'should render show template' do
-    get :show, params: { id: 1 }
-    expect(response).to render_template('show')
-   end
+    it 'should render show template' do
+      get :show, params: { id: 1 }
+      expect(response).to render_template('show')
+    end
   end
 end
