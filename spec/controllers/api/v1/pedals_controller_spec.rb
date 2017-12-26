@@ -38,7 +38,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
   describe 'POST create' do
     it 'should create a pedal with valid params' do
-      user = FactoryBot.create(:user)
+      FactoryBot.create(:user)
 
       params = {
         pedal:  {
@@ -46,6 +46,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
           description: 'Test',
           image_url: 'https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg',
           effecttype_id: 'Overdrive'
+
         }
       }
       post :create, params: params
