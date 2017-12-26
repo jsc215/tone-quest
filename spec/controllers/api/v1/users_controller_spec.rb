@@ -3,8 +3,9 @@ require 'spec_helper'
 
 RSpec.describe Api::V1::UsersController, type: :controller do
   let!(:user) do
-    User.create!(
-        provider: 'MyString',
+    User.create!
+    (
+      provider: 'MyString',
       uid: 'MyString',
       first_name: 'MyString',
       last_name: 'MyString',
