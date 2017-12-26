@@ -38,20 +38,19 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
   describe 'POST create' do
     it 'should create a pedal with valid params' do
-    user = FactoryBot.create(:user)
+      user = FactoryBot.create(:user)
 
       params = {
         pedal:  {
           name: 'Test',
           description: 'Test',
           image_url: 'https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg',
-          effecttype_id: "Overdrive"
+          effecttype_id: 'Overdrive'
         }
       }
       post :create, params: params
-        expect { post :create, params: params }.to change(Pedal, :count).by(1)
-        expect(response).to have_http_status :ok
-
+      expect { post :create, params: params }.to change(Pedal, :count).by(1)
+      expect(response).to have_http_status :ok
     end
   end
 end
