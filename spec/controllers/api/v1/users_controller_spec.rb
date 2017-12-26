@@ -10,9 +10,10 @@ RSpec.describe Api::V1::UsersController, type: :controller do
       last_name: 'MyString',
       email: 'MyString',
       token: 'MyString',
-      refresh_token: 'MyString')
+      refresh_token: 'MyString'
+    )
   end
-  
+
   describe 'GET#index' do
     it 'should render json object of all users' do
       get :index
