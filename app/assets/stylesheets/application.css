@@ -14,6 +14,10 @@
  * require_self
  *= require foundation_and_overrides
  */
+html{
+  margin: 0em 1em 0em 1em;
+}
+
 .title {
   font-family: serif;
   font-size: 5em;
@@ -37,13 +41,11 @@ h2{
 
 body  {
 background-color: black;
- /* background-image: url(https://i.pinimg.com/originals/62/74/30/6274303d74280ce1406d22f935966dd7.jpg); */
- background-image: url('tone-quest-background.jpg');
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center center;
-
+background: url('tone-quest-background.jpg') no-repeat center center fixed;
+background-size: cover;
+ width: 100%;
 }
+
  h1{
   color: #726D55;
   text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
@@ -54,17 +56,7 @@ background-color: black;
   text-align: center;
   color: #83765E;
 }
-/* .breadcrumbs{
-border-style:ridge;
-text-align: center;
-border-style: groove;
-margin: 5px;
-background-color: #3F2625;
-} */
 
- /* .PedalShowImg{
-  border: 1px solid white;
-} */
 
 form.new-pedal-form.callout{
   width: 30em;

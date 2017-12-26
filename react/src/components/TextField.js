@@ -11,6 +11,6 @@ const TextField = (props) => {
       />
     </label>
   );
-}
+};
 
 export default TextField;

@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe PedalsController, type: :controller do
+RSpec.describe PedalboardsController, type: :controller do
   describe 'GET index' do
     it 'should render index template' do
       get :index
