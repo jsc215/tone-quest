@@ -1,6 +1,7 @@
 class Api::V1::PedalsController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, except: [:index, :show, :create]
+  # skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  # before_action :require_signin!, except: [:index, :show]
+
   def index
     pedals = Pedal.all
     render json: pedals
@@ -16,6 +17,7 @@ end
 
 def create
   pedal = Pedal.new(pedal_params)
+
   pedal.effecttype = Effecttype.where(:name => pedal_params['effecttype_id']).first
   if pedal.save
     render json: pedal

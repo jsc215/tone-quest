@@ -1,4 +1,5 @@
 require 'coveralls'
+require 'simplecov'
 Coveralls.wear!('rails')
 
 require File.expand_path('../../config/environment', __FILE__)
