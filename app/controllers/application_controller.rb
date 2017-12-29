@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 end
 
   def require_signin!
-  if current_user.nil?
-    flash[:error] = "Please sign in..."
-    redirect_to '/pedals'
+    if current_user.nil?
+      flash[:error] = "Please sign in..."
+      redirect_to '/pedals'
+    end
   end
-end
