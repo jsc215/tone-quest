@@ -1,6 +1,6 @@
 # README
 
-#####Name: Tone Quest
+##### Name: Tone Quest
 
 ##### Ruby Version 2.3.3
 
