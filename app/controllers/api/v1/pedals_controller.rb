@@ -1,6 +1,11 @@
 class Api::V1::PedalsController < ApplicationController
+<<<<<<< pedalboards_and_authenticating_users
   skip_before_action :verify_authenticity_token, only: [:index, :show]
 # skip_before_action :require_signin!, except: [:create, :delete]
+=======
+  skip_before_action :verify_authenticity_token, only: [:create, :destroy]
+  # before_action :require_signin!, except: [:index, :show]
+>>>>>>> master
 
   def index
     pedals = Pedal.all
