@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PedalShowTile from '../components/PedalShowTile';
 import { Link } from 'react-router';
 
-class PedalShowContainer extends Component {
+class PedalShowContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {

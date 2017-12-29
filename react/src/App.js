@@ -7,6 +7,9 @@ import PedalFormContainer from './containers/PedalFormContainer';
 import UsersIndexContainer from './containers/UsersIndexContainer';
 import UserShowContainer from './containers/UserShowContainer';
 import PedalboardsContainer from './containers/PedalboardsContainer';
+import PedalboardShowContainer from './containers/PedalboardShowContainer';
+import PedalboardFormContainer from './containers/PedalboardFormContainer';
+
 
 const App = props => {
   return(
@@ -20,6 +23,8 @@ const App = props => {
         <Route path='/users' component={UsersIndexContainer} />
         <Route path='/users/:id' component={UserShowContainer} />
         <Route path='/pedalboards' component={PedalboardsContainer} />
+        <Route path= '/pedalboards/new' component={PedalboardFormContainer} />
+        <Route path='/pedalboards/:id' component={PedalboardShowContainer} />
       </Route>
     </Router>
   </div>
