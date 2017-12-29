@@ -11,7 +11,7 @@ class PedalsIndexContainer extends React.Component {
     };
       // this.handleClick = this.handleClick.bind(this);
   }
-  componentDidMount () {
+  getPedals() {
     fetch(`/api/v1/pedals`,{
       credentials: 'same-origin'
     })
@@ -30,14 +30,13 @@ class PedalsIndexContainer extends React.Component {
         pedals: body.pedals
       });
     })
-  .catch(error => console.error(`Error in fetch: ${error.message}`));
-}
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
 
-// handleClick(event) {
-//     event.preventDefault();
-//     browserHistory.push('/venues/new');
-//   }
 
+  componentDidMount () {
+    this.getPedals();
+  }
     render() {
 
       let pedals = this.state.pedals.map(pedal=>{
@@ -56,13 +55,7 @@ class PedalsIndexContainer extends React.Component {
               {pedals}
             </div>
 
-
         );
       }
     }
-
-
-
-
-
 export default PedalsIndexContainer;

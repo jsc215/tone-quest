@@ -3,7 +3,7 @@ import { Route, link, browserHistory } from 'react-router';
 import TextField from '../components/TextField';
 import SelectField from '../components/SelectField';
 
-class PedalFormContainer extends Component {
+class PedalFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -152,16 +152,15 @@ class PedalFormContainer extends Component {
                   />
                 </div>
               </div>
-
+              
               <div className="row">
-            <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
-            <input className="button tiny" type="submit" value="Submit" />
+                <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
+                <input className="button tiny" type="submit" value="Submit" />
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
 
-
-      );
-    }
-  }
+          );
+        }
+      }
 export default PedalFormContainer;

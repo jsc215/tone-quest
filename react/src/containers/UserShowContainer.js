@@ -3,7 +3,7 @@ import UserShowTile from '../components/UserShowTile';
 import PedalboardTile from '../components/PedalboardTile';
 import { Link } from 'react-router';
 
-class UserShowContainer extends Component {
+class UserShowContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ class UserShowContainer extends Component {
 
   render() {
     // let pedalboards = this.state.pedalboards.map((pedalboard) => {
-    
+
     return(
       <UserShowTile
         key={this.state.user.id}
