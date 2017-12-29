@@ -13,5 +13,5 @@ end
    if current_user.nil?
     flash[:error] = "Please sign in..."
     redirect_to '/pedals'
+    end
   end
-end

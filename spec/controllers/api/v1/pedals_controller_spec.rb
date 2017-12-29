@@ -39,8 +39,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
   describe 'POST#create' do
     it 'should create a pedal with valid params' do
       e1 = FactoryBot.create(:effecttype)
-     #  current_user = FactoryBot.create(:user)
-     #  current_user
+      
       params =
         {
           pedal:
