@@ -1,6 +1,6 @@
 # PedalboardsController
 class Api::V1::PedalboardsController < ApplicationController
-skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
+  skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
   # skip_before_action :verify_authenticity_token, only: [:index, :show]
 
   def index
@@ -29,11 +29,11 @@ skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
   end
 
   private
+
   def pedalboard_params
     params.require(:pedalboard).permit(
       :name,
       :user_id
     )
-
   end
 end
