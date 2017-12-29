@@ -17,7 +17,9 @@
 html{
   margin: 0em 1em 0em 1em;
 }
-
+.google{
+  color: #1468a0;
+}
 .title {
   font-family: serif;
   font-size: 5em;
