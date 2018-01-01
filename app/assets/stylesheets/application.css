@@ -17,9 +17,32 @@
 html{
   margin: 0em 1em 0em 1em;
 }
+
+
+
+.menu a{
+  font-family: fantasy;
+  color: white;
+  font-size: 20px;
+}
+
+.menu a:hover{
+    color: #9F9476;
+}
+/* .callout{
+  margin: 0px 10em 1rem 10em;
+} */
+
+a.active{
+  color: #9F9476;
+  text-decoration: underline;
+}
+
 .google{
   color: #1468a0;
+  float: right;
 }
+
 .title {
   font-family: serif;
   font-size: 5em;
@@ -59,16 +82,23 @@ background-size: cover;
   color: #83765E;
 }
 
+form{
+  margin: 2em 15rem  1rem 15rem;
+  font-family: fantasy;
 
-form.new-pedal-form.callout{
-  width: 30em;
 }
 
- p{
-   color:white;
+/* form.new-pedal-form.callout{
+  margin: 0px 20em  1rem 20em;
+  font-family: fantasy;
+
+} */
+
+p{
+  color:white;
  }
 
- .PedalShowImg img{
+.PedalShowImg img {
   float:center;
   border: 3px double white;
   max-width: 30rem;
@@ -88,10 +118,16 @@ img {
   max-height: 100%;
   max-width: 100%;
 }
+
  .pedalTile img {
   /* border: 3px solid white; */
    max-width: 200px;
    max-height:120px;
    margin-bottom: 3px;
    /* box-shadow: 10px 10px 20px #aaa; */
+}
+
+.button {
+  margin: 0px 3px 0px 0px;
+
 }
