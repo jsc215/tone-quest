@@ -5,23 +5,15 @@ Rails.application.routes.draw do
   # root "static_pages#index"
   resources :pedals, only: [:index, :new, :show, :create]
   resources :users, only: [:index, :show]
-  resources :pedalboards 
+  resources :pedalboards
 
 
   namespace :api do
     namespace :v1 do
       resources :pedals, only: [:index, :new, :show, :create]
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
       resources :users, only: [:index, :show]
-    end
-  end
-  namespace :api do
-    namespace :v1 do
       resources :pedalboards
+      resources :boardpedals
     end
   end
 end

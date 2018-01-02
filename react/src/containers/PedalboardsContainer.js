@@ -50,7 +50,7 @@ class PedalboardsContainer extends React.Component {
     });
 
       return (
-        <div>
+        <div className= "grid-x">
           {pedalboards}
         </div>
       );

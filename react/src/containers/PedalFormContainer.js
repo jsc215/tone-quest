@@ -121,8 +121,7 @@ class PedalFormContainer extends React.Component {
       }
       render() {
         return(
-          <div className='pedal-form'>
-            <form className='new-pedal-form callout' onSubmit={this.handleFormSubmit}>
+            <form onSubmit={this.handleFormSubmit}>
               <div className='row'>
                 <div className='six columns'>
                   <TextField
@@ -152,13 +151,13 @@ class PedalFormContainer extends React.Component {
                   />
                 </div>
               </div>
-              
+
               <div className="row">
                 <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
                 <input className="button tiny" type="submit" value="Submit" />
               </div>
             </form>
-          </div>
+
 
           );
         }

@@ -9,8 +9,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    user = current_user
-    render json: { user: user, pedalboards: user.pedalboards }
+    user = User.find(params[:id])
+    render json: user
   end
 end
 
