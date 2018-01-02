@@ -11,6 +11,7 @@ Pedal.destroy_all
 Boardpedal.destroy_all
 Pedalboard.destroy_all
 Effecttype.destroy_all
+User.destroy_all
 
 Effecttype.create(name: "Overdrive")
 Effecttype.create(name: "Distortion")
@@ -39,7 +40,7 @@ Pedal.create(name: "XL Cream Fuzz", effecttype_id: 3, image_url: "http://static.
 Pedal.create(name: "Walrus Audio 385 Overdrive", effecttype_id: 1, image_url: "http://cdn.shopify.com/s/files/1/0987/8460/products/385r_Front__43222.1487617204.1200.1200_800x.png?v=1493097397", description: Faker::Hipster.paragraph)
 Pedal.create(name: "Dark Matter Distortion", effecttype_id: 2, image_url: "http://cdn-downloads.tcelectronic.com/media/164593/dark-matter-distortion-front.png", description: Faker::Hipster.paragraph)
 Pedal.create(name: "Gross Distortion", effecttype_id: 2, image_url: "http://www.joegore.com/wp-content/uploads/2015/09/Gross_crop.png",  description: Faker::Hipster.paragraph)
-Pedal.createname: "Fuzz Face", effecttype_id: 3, image_url: "https://www.long-mcquade.com/files/15697/JDF2FuzzFaceDistortion-11.png",  description: Faker::Hipster.paragraph)
+Pedal.create(name: "Fuzz Face", effecttype_id: 3, image_url: "https://www.long-mcquade.com/files/15697/JDF2FuzzFaceDistortion-11.png",  description: Faker::Hipster.paragraph)
 Pedal.create(name: "Hall of Fame Reverb", effecttype_id: 5, image_url: "http://cdn-downloads.tcelectronic.com/media/164683/hall-of-fame-reverb-front.png", description: Faker::Hipster.paragraph)
 Pedal.create(name: "Grace Compressor", effecttype_id: 6, image_url: "https://i.pinimg.com/originals/01/41/a5/0141a55684d92fb635e2a7585eaa913e.png", description: Faker::Hipster.paragraph)
 Pedal.create(name: "Malekko E.Filter Envelope Filter", effecttype_id: 7, image_url: "https://malekkoheavyindustry.com/content/uploads/2011/12/malekko_efilter.png", description: Faker::Hipster.paragraph)
@@ -49,6 +50,17 @@ Pedal.create(name: "Dr. Green Octa Dose", effecttype_id: 8, image_url: "http://a
 
 
 
-Pedalboard.create(name: Blues Pedalboard, user_id: 1)
-Pedalboard.create(name: Crunchy Pedalboard, user_id: 1)
-Pedalboard.create(name: Crazy Awesome Pedalboard, user: 1 )
+Pedalboard.create(name: 'Crazy Awesome Pedalboard', user_id: 1 )
+
+
+
+Boardpedal.create(pedal_id:1, pedalboard_id: 1)
+Boardpedal.create(pedal_id:5, pedalboard_id: 1)
+Boardpedal.create(pedal_id:6, pedalboard_id: 1)
+Boardpedal.create(pedal_id:20, pedalboard_id: 1)
+Boardpedal.create(pedal_id:7, pedalboard_id: 1)
+Boardpedal.create(pedal_id:11, pedalboard_id: 1)
+# Boardpedal.create(pedal_id:7, pedalboard_id: 1)
+# Boardpedal.create(pedal_id:8, pedalboard_id: 1)
+# Boardpedal.create(pedal_id:1, pedalboard_id: 1)
+# Boardpedal.create(pedal_id:1, pedalboard_id: 1)

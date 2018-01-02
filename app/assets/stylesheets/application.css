@@ -20,6 +20,7 @@ html{
 
 
 
+
 .menu a{
   font-family: fantasy;
   color: white;
@@ -104,6 +105,13 @@ p{
   max-width: 30rem;
   max-height:30rem;
   margin-bottom: 5px;
+}
+.pedalboard{
+background: url('board.png') no-repeat center center;
+background-color: #a52a2a2e;
+/* background-size: cover; */
+
+
 }
 
 .pedalTile{
