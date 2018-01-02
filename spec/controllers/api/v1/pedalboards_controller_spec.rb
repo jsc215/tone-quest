@@ -44,23 +44,24 @@ RSpec.describe Api::V1::PedalboardsController, type: :controller do
       #   effecttype_id: 1
 
       # pb= FactoryBot.create(:pedalboard, user: user)
-      # bp = Boardpedal.create(pedal_id: 1, pedalboard_id: pb.id)
+      bp = Boardpedal.create(pedal_id: 1, pedalboard_id: 1)
 
       params = {
         pedalboard: {
           name: 'Awesome board',
-          user_id: user.id,
-          pedal: {
-            value: 1,
-            label: 'Boss Blues Driver'
-            # image_url: 'stuff.com',
-            # effecttype_id: 1
-          }
-        }
+          user_id: user.id
+        #   pedal: {
+        #     value: 1,
+        #     name: 'Boss Blues Driver',
+        #     image_url: 'stuff.com',
+        #     effecttype_id: 1
+        #   }
+        # }
       }
-      
-      # expect { post :create, params: params }.to change(Pedalboard, :count).by(1)
+    }
+
       expect(response).to have_http_status :ok
+      # expect { post :create, params: params }.to change(Pedalboard, :count).by(1)
     end
   end
 end

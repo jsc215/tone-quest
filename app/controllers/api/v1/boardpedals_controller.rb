@@ -1,20 +1,18 @@
-class Api::V1::PedalboardsController < ApplicationController
+class Api::V1::BoardpedalsController < ApplicationController
 
   def create
   boardpedal = Boardpedal.new(boardpedal_params)
-  boardpedal.name = Boardpedal.pedal.name
-  boardpedal.pedalboard_id = Boardpedal.pedal.pedalboard_id
-  boardpedal.pedal_id = Boardpedal.pedal.pedal_id
+  # boardpedal.name = Boardpedal.pedal.name
+  # boardpedal.pedalboard_id = Boardpedal.pedal.pedalboard_id
+  # boardpedal.pedal_id = Boardpedal.pedal.pedal_id
   if boardpedal.save
-    render json: Boardpedal.all
+    render json: boardpedal
   else
     render json:
     { error: boardpedal.errors.full_messages },
       status: :unprocessable_entity
   end
 end
-
-  
 
 private
 

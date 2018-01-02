@@ -12,7 +12,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
       expect(response.status).to eq 200
       expect(response.content_type).to eq('application/json')
-      expect(json['pedals'].last['name']).to eq('Boss Blues Driver 1')
+      expect(json['pedals'].last['name']).to eq('Boss Blues Driver 2')
       expect(json['pedals'].last['description']).to eq('best pedal in the world')
       expect(json['pedals'].last['effecttype']['name']).to eq(e1.name)
       expect(json['pedals'].last['image_url']).to eq('https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg')
@@ -29,7 +29,7 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq('application/json')
 
-      expect(json['pedal']['name']).to eq('Boss Blues Driver 2')
+      expect(json['pedal']['name']).to eq('Boss Blues Driver 3')
       expect(json['pedal']['description']).to eq('best pedal in the world')
       expect(json['pedal']['effecttype_id']).to eq(e1.id)
       expect(json['pedal']['image_url']).to eq('https://effektpedaler.dk/wp-content/uploads/dunlop-cry-baby-gcb95.jpg')
