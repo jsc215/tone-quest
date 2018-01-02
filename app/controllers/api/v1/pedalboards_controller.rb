@@ -33,13 +33,13 @@ class Api::V1::PedalboardsController < ApplicationController
   pedalboard = Pedalboard.new(pedalboard_params)
   pedalboard.user = current_user
   pedals = pedalboard.pedals
-
   if pedalboard.save
   if params['pedal']['value']
     newBP = Boardpedal.new(pedalboard_id: pedalboard.id, pedal_id: params['pedal']['value'])
     newBP.save
   end
     render json: pedalboard
+    binding.pry
   else
     render json:
       { errors: pedalboard.errors.full_messages }, status: :unprocessable_entity

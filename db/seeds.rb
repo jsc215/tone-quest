@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pedal.destroy_all
+Boardpedal.destroy_all
+Pedalboard.destroy_all
+
+
 Effecttype.destroy_all
 Effecttype.create(name: "Overdrive")
 Effecttype.create(name: "Distortion")
@@ -82,4 +86,9 @@ Pedal.create(
   effecttype_id: 7,
   image_url:"http://cdn.korg.com/us/products/upload/2babaa740f37fc6e461e308375d7785b_pc.png",
   description: 'Strangest guitar pedal in the world!'
+)
+
+Pedalboard.create(
+  name: The Blues Pedalboard,
+  user_id: 1
 )

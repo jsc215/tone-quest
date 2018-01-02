@@ -31,12 +31,12 @@ class PedalboardFormContainer extends React.Component{
     });
   }
 
-
   handlePedalChange(selectedOption){
     this.setState({ selectedOption });
     this.setPedalId(selectedOption);
     console.log(`Selected: ${selectedOption.label} pedal_id: ${selectedOption.value}`);
-    }
+  }
+
   componentDidMount(){
     this.getOptions();
   }
@@ -56,7 +56,7 @@ class PedalboardFormContainer extends React.Component{
     .then(body => {
       this.setState({
         pedals: body.pedals
-      })
+      });
     }
   )
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -70,8 +70,6 @@ class PedalboardFormContainer extends React.Component{
       [newKey]: newValue
     });
   }
-
-
 
   addNewPedalboard(newPedalboard) {
     fetch('/api/v1/pedalboards', {
@@ -94,7 +92,7 @@ class PedalboardFormContainer extends React.Component{
       browserHistory.push(`/pedalboards`);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-    }
+  }
 
   // updatePedal(newBoardPedal) {
   //   fetch(`/api/v1/`, {
@@ -137,10 +135,9 @@ class PedalboardFormContainer extends React.Component{
     let options = []
     pedalOptions = pedals.map((pedal) => {
       options.push({value: pedal.id, label: pedal.name})
-    })
+    });
 
     return(
-      // <div className='pedalboard-form'>
         <form onSubmit={this.handleFormSubmit}>
           <div className='callout'>
             <div className='six columns'>
@@ -157,15 +154,14 @@ class PedalboardFormContainer extends React.Component{
                 onChange={this.handlePedalChange}
                 options={options}
               />
-
             </div>
           </div>
+
           <div className="row">
             <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
             <input className="button tiny" type="submit" value="Submit" />
           </div>
         </form>
-      // </div>
     );
   }
 }
