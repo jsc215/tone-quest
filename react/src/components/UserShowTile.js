@@ -4,8 +4,8 @@ import React from 'react';
 const UserShowTile = props => {
   return(
     <div>
-    <p>Pedals{props.name}</p>
-    <p>{props.pedalboardName}</p>
+    <p>User Info Page</p>
+    <p>{props.name}</p>
 
   </div>
   )

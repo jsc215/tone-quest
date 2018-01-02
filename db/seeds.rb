@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pedal.destroy_all
+Boardpedal.destroy_all
+Pedalboard.destroy_all
+
+
 Effecttype.destroy_all
 Effecttype.create(name: "Overdrive")
 Effecttype.create(name: "Distortion")
@@ -73,6 +77,18 @@ Pedal.create(
 )
 Pedal.create(
   name: "Electro-Harmonix Holy Grail Nano Reverb",
-  effecttype_id: 4,
+  effecttype_id: 5,
   image_url:"https://static1.squarespace.com/static/5767f5fc6b8f5b316becd639/5852d7a6d1758e0997276970/587acc08bf629abac08d5910/1484442640590/EHX+Holy+Grail+%28the+ONE%29.png?format=500w"
+)
+
+Pedal.create(
+  name: "Miku Stomp Pedal",
+  effecttype_id: 7,
+  image_url:"http://cdn.korg.com/us/products/upload/2babaa740f37fc6e461e308375d7785b_pc.png",
+  description: 'Strangest guitar pedal in the world!'
+)
+
+Pedalboard.create(
+  name: The Blues Pedalboard,
+  user_id: 1
 )
