@@ -3,15 +3,18 @@ class Api::V1::PedalsController < ApplicationController
   # skip_before_action :require_signin!, except: [:create, :delete]
 
   def index
+
     pedals = Pedal.all
     render json: pedals
+    # render json:{ pedals: pedals, user: current_user }
   end
 
   def show
     pedal = Pedal.find(params[:id])
     render json: {
       pedal: pedal,
-      effecttypename: pedal.effecttype.name
+      effecttypename: pedal.effecttype.name,
+      pedalreviews: pedal.pedalreviews
     }
   end
 

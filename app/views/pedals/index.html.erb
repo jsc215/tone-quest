@@ -3,7 +3,7 @@
     <div class="hollow button"><%= link_to "Logout", logout_path %></div>
   <% else %>
     <div class='google'>
-      <div class="hollow button">
+      <div id = "google-sign-in" class="hollow button">
         <%= link_to "Sign in with Google", "/auth/google" %>
       <% end %>
     </div>

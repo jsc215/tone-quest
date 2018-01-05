@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+// import PedalboardTile from '../components/PedalboardTile';
 import PedalboardShowTile from '../components/PedalboardShowTile';
-import PedalboardTile from '../components/PedalboardTile';
 import Draggable from 'react-draggable';
-
+import {DraggableCore} from 'react-draggable';
 import { Link } from 'react-router';
 
 class PedalboardShowContainer extends React.Component {
@@ -35,9 +35,11 @@ class PedalboardShowContainer extends React.Component {
     this.setState({activeDrags: ++this.state.activeDrags});
   }
 
+
   onStop() {
     this.setState({activeDrags: --this.state.activeDrags});
   }
+
 
   adjustXPos(e) {
     e.preventDefault();
@@ -90,25 +92,22 @@ class PedalboardShowContainer extends React.Component {
   }
 
   mapBoardPedals(){
+
     let pedalBoardPedals = this.state.pedalboardpedals.map(pedal =>{
       return(
 
-      <Draggable>
-        <div className='box'>
-        <PedalboardTile
-          key={pedal.id}
-          id={pedal.id}
-          onStart={this.onStart}
-          onStop={this.onStop}
-          pedalImage={pedal.image_url}
-          pedalName={pedal.name}
-          name={this.state.pedalboard.name}
-        />
-        </div>
-      </Draggable>
+        <Draggable key={pedal.id}>
+          <div className='pedalBoardTile'>
+            <PedalboardShowTile
+              id={pedal.id}
+              pedalImage={pedal.image_url}
+              pedalName={pedal.name}
+            />
+          </div>
+        </Draggable>
       );
     });
-
+    
     return pedalBoardPedals;
   }
 
@@ -116,19 +115,9 @@ class PedalboardShowContainer extends React.Component {
     const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
     const {deltaPosition, controlledPosition} = this.state;
 
-
     return (
-      <div>
-        <PedalboardShowTile
-          key={this.state.pedalboard.id}
-          id={this.state.pedalboard.id}
-          pedalboardName={this.state.pedalboard.name}
-        />
-        <div className='pedalboard'>
-      <div className='grid-x'>
+      <div className="pedalboard">
         {this.mapBoardPedals()}
-        </div>
-      </div>
       </div>
     );
   }

@@ -14,128 +14,191 @@
  * require_self
  *= require foundation_and_overrides
  */
-html{
-  margin: 0em 1em 0em 1em;
+
+.pedalboard-container{
+  background: url('Pedal-icon-white.png') no-repeat center center;
+  border: 3px double white;
+  background-size: cover;
+  max-width: 280px;
+  max-height:200px;
+  margin-bottom: 3px;
 }
 
-
-
-
-.menu a{
-  font-family: fantasy;
-  color: white;
-  font-size: 20px;
-}
-
-.menu a:hover{
-    color: #9F9476;
-}
-/* .callout{
-  margin: 0px 10em 1rem 10em;
-} */
-
-a.active{
-  color: #9F9476;
-  text-decoration: underline;
-}
-
-.google{
-  color: #1468a0;
-  float: right;
-}
-
-.title {
-  font-family: serif;
-  font-size: 5em;
-  text-align: left;
-  color: #83765E;
-  text-shadow: 0 1px 0 #999999, 0 2px 0 #888888,
-             0 3px 0 #777777, 0 4px 0 #666666,
-             0 5px 0 #555555, 0 6px 0 #444444,
-             0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4),
-             0 9px 10px rgba(0, 0, 0, 0.2);
-           }
-
-.top-bar {
-  background:none;
+.review-box{
   text-align: center;
+  border: 3px solid white;
 }
 
-h2{
-  color: #A97C4E;
-}
-
-body  {
-background-color: black;
-background: url('tone-quest-background.jpg') no-repeat center center fixed;
-background-size: cover;
- width: 100%;
-}
-
- h1{
-  color: #726D55;
-  text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
-}
-
-.title h1 {
-  font-family: serif;
-  text-align: center;
-  color: #83765E;
-}
-
-form{
-  margin: 2em 15rem  1rem 15rem;
-  font-family: fantasy;
-
-}
-
-/* form.new-pedal-form.callout{
-  margin: 0px 20em  1rem 20em;
-  font-family: fantasy;
-
-} */
-
-p{
-  color:white;
+ #pagination {
+   text-align: center;
+   padding: 10px;
  }
 
-.PedalShowImg img {
-  float:center;
-  border: 3px double white;
-  max-width: 30rem;
-  max-height:30rem;
-  margin-bottom: 5px;
-}
-.pedalboard{
-background: url('board.png') no-repeat center center;
-background-color: #a52a2a2e;
-/* background-size: cover; */
+ #page-number-container {
+   display: inline-block;
+   margin: auto;
+ }
 
-
+#nav-bar{
+  background-color: #c59292;
+  border-style: solid;
+  border-radius: 2rem;
+  padding: 17px;
+  margin-bottom: 20px;
 }
 
-.pedalTile{
-  /* border: 3px solid white; */
-  text-align: center;
-   border: 3px double  #442725;
-   padding: 10px;
-   /* margin: 2px; */
+  html{
+    margin: 0em 1em 0em 1em;
+  }
+
+  .menu a{
+    font-family: fantasy;
+    color: white;
+    font-size: 20px;
+  }
+
+  .menu a:hover{
+    color: #000000;
+  }
+
+  a.active{
+    color: #000000;
+    text-decoration: underline;
+  }
+#google-sign-in{
+  border-color: black;
+  border-radius: 10px;
 }
 
-img {
-  max-height: 100%;
-  max-width: 100%;
+.google {
+  float: right;
+  }
+
+
+  .title {
+    font-family: serif;
+    font-size: 5em;
+    text-align: left;
+    /* color: #83765E; */
+    color: #170c0c;
+    text-shadow: 0 1px 0 #999999, 0 2px 0 #888888,
+               0 3px 0 #777777, 0 4px 0 #666666,
+               0 5px 0 #555555, 0 6px 0 #444444,
+               0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4),
+               0 9px 10px rgba(0, 0, 0, 0.2);
+             }
+
+  .top-bar {
+    background:none;
+    text-align: center;
+  }
+
+  h2{
+    color: #A97C4E;
+  }
+
+  body  {
+  background-color: #81979b;
+  }
+  /* background: url('tone-quest-background.jpg') no-repeat center center fixed; */
+  /* background-size: cover; */
+   /* width: 100%;
+  } */
+
+   h1{
+    color: #726D55;
+    text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
+  }
+
+  .title h1 {
+    font-family: serif;
+    text-align: center;
+    color: #83765E;
+  }
+
+  form{
+    margin: 2em 15rem  1rem 15rem;
+    font-family: 'Oswald', sans-serif;
+
+  }
+
+  p{
+    color:white;
+   }
+
+   .hvr-bounce-in {
+     display: inline-block;
+     vertical-align: middle;
+     -webkit-transform: perspective(1px) translateZ(0);
+     transform: perspective(1px) translateZ(0);
+     box-shadow: 0 0 1px transparent;
+     -webkit-transition-duration: 0.5s;
+     transition-duration: 0.5s;
+   }
+
+   .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+     -webkit-transform: scale(1.2);
+     transform: scale(1.2);
+     -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   }
+   .PedalShowImg{
+     text-align: center;
+   }
+.show-box{
+  border: 2px solid white:
+}
+#show-box-desc{
+  text-align: left;
+}
+  .PedalShowImg img {
+    float:left;
+    /* border: 3px double white; */
+    max-width: 30rem;
+    max-height:30rem;
+    margin-bottom: 5px;
+  }
+
+  .pedalboard{
+  background: url('terra.png') no-repeat center center;
+  height: 40em;
+  width: 100%
 }
 
- .pedalTile img {
-  /* border: 3px solid white; */
-   max-width: 200px;
-   max-height:120px;
-   margin-bottom: 3px;
-   /* box-shadow: 10px 10px 20px #aaa; */
-}
+  .pedalBoardTile  {
+    display:inline-block;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Oswald', sans-serif;
+    border: solid 2px black;
+    margin: 1px;
+  }
 
-.button {
-  margin: 0px 3px 0px 0px;
+  .pedalBoardTile img {
+    max-width: 280px;
+    max-height:200px;
+    margin-bottom: 3px;
+  }
 
-}
+  .pedalTile{
+    font-family: 'Oswald', sans-serif;
+    /* font-weight: bold; */
+    text-align: center;
+     border: 3px double  #442725;
+     padding: 10px;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+   .pedalTile img {
+     max-width: 200px;
+     max-height:120px;
+     margin-bottom: 3px;
+  }
+
+  .button {
+    margin: 0px 3px 0px 0px;
+  }
