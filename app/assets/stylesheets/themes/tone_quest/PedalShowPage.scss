@@ -1,0 +1,72 @@
+
+// #review-container {
+
+//   padding: 70px;
+//   width: 80%;
+//   margin: auto;
+//     h2 {
+//       color: rgba(250,240,230,1);
+//       display: inline-block;
+//       margin: 0;
+//       line-height: 100%;
+//       vertical-align: middle;
+//     }
+// }
+//
+#add-review-button {
+  padding: 7px 15px;
+  display: inline-block;
+  border: 1px solid rgba(250,240,230,1);
+  vertical-align: middle;
+  margin-left: 20px;
+  color: rgba(250,240,230,1);
+  text-decoration: none;
+  transition: all .1s ease-in;
+
+    &:hover{
+      background-color: rgba(250,240,230,1);
+      color: #211216;
+    }
+  }
+
+.show-box{
+  border: solid 2px white;
+  // margin-left: 50em;
+  text-align: center;
+
+    img {
+      max-width: 30rem;
+      max-height:30rem;
+      margin-bottom: 5px;
+      // float: left;
+    }
+}
+
+
+#show-box-des{
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+// .show-box img {
+//
+//   /* border: 3px double white; */
+//   max-width: 30rem;
+//   max-height:30rem;
+//   margin-bottom: 5px;
+//   float: left;
+// }
+
+h1{
+ color: #726D55;
+ text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
+}
+
+h2{
+  color: #A97C4E;
+}
+
+// .review-box {
+//   text-align: center;
+//   border: 3px solid white;
+// }

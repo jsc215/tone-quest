@@ -11,7 +11,7 @@ const PedalReviewTile = props => {
   return(
       <div>
       <p>Rating: {props.rating}/5</p>
-      <p>{props.comment}</p>
+      <p>{props.comment}</p><hr/>
       {/* <h1>{props.user.first_name}</h1> */}
     </div>
       /* <span className='custom-button tile-button' onClick={upVote}><i className="far fa-thumbs-up"></i> Like <span className='numbers'>{props.upvotes}</span></span>

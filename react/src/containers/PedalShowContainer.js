@@ -58,7 +58,7 @@ class PedalShowContainer extends React.Component {
 
     return (
 
-      <div>
+    <div>
         <PedalShowTile
           key={this.state.pedal.id}
           id={this.state.pedal.id}
@@ -67,13 +67,15 @@ class PedalShowContainer extends React.Component {
           pedalImage={this.state.pedal.image_url}
           pedalDescription={this.state.pedal.description}
         />
+        {/* <div id='review-container'>
+          <div id='review-container-header' className= 'clearfix'> */}
+          <span className='review-box'>
+            <span><h2>Reviews:</h2>
+            <Link to={`/pedals/${this.state.pedal.id}/pedalreviews/new`} id='add-review-button'>Add a Review</Link></span>
 
-          <h2>Reviews:</h2><Link to={`/pedals/${this.state.pedal.id}/pedalreviews/new`} id='add-review-button'>+ Add Review</Link>
-          <div className='review-box'>
           {this.mapPedalReviews()}
-        </div>
-        </div>
-
+        </span>
+      </div>
 
 
     );

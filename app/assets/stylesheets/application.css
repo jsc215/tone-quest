@@ -15,19 +15,20 @@
  *= require foundation_and_overrides
  */
 
-.pedalboard-container{
+
+/* .pedalboard-container{
   background: url('Pedal-icon-white.png') no-repeat center center;
   border: 3px double white;
   background-size: cover;
   max-width: 280px;
   max-height:200px;
   margin-bottom: 3px;
-}
+} */
 
-.review-box{
+/* .review-box{
   text-align: center;
   border: 3px solid white;
-}
+} */
 
  #pagination {
    text-align: center;
@@ -93,9 +94,7 @@
     text-align: center;
   }
 
-  h2{
-    color: #A97C4E;
-  }
+
 
   body  {
   background-color: #81979b;
@@ -105,10 +104,7 @@
    /* width: 100%;
   } */
 
-   h1{
-    color: #726D55;
-    text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
-  }
+
 
   .title h1 {
     font-family: serif;
@@ -119,7 +115,6 @@
   form{
     margin: 2em 15rem  1rem 15rem;
     font-family: 'Oswald', sans-serif;
-
   }
 
   p{
@@ -142,22 +137,12 @@
      -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
    }
+
+
    .PedalShowImg{
      text-align: center;
    }
-.show-box{
-  border: 2px solid white:
-}
-#show-box-desc{
-  text-align: left;
-}
-  .PedalShowImg img {
-    float:left;
-    /* border: 3px double white; */
-    max-width: 30rem;
-    max-height:30rem;
-    margin-bottom: 5px;
-  }
+
 
   .pedalboard{
   background: url('terra.png') no-repeat center center;
@@ -170,7 +155,6 @@
     text-align: center;
     font-size: 1em;
     font-family: 'Oswald', sans-serif;
-    border: solid 2px black;
     margin: 1px;
   }
 

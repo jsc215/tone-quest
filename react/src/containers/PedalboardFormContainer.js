@@ -139,8 +139,8 @@ class PedalboardFormContainer extends React.Component{
 
     return(
         <form onSubmit={this.handleFormSubmit}>
-          <div className='callout'>
-            <div className='six columns'>
+          {/* <div className='callout'> */}
+            {/* <div className='six columns'> */}
               <TextField
                 content={this.state.name}
                 label="Pedalboard Name"
@@ -154,8 +154,8 @@ class PedalboardFormContainer extends React.Component{
                 onChange={this.handlePedalChange}
                 options={options}
               />
-            </div>
-          </div>
+            {/* </div> */}
+          {/* </div> */}
 
           <div className="row">
             <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
