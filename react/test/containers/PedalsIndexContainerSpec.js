@@ -16,7 +16,10 @@ describe('PedalsIndexContainer', () => {
 
   it ('should have the specified initial state', ()=> {
     expect(wrapper.state()).toEqual({
-      pedals: []
+      pedals: [],
+      currentUser: null,
+      currentPage: 1,
+      pedalsPerPage: 9
     });
   });
 
