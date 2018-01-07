@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Pedal.destroy_all
-Boardpedal.destroy_all
-Pedalboard.destroy_all
 Effecttype.destroy_all
+Pedal.destroy_all
+Pedalboard.destroy_all
+Boardpedal.destroy_all
 Pedalreview.destroy_all
 
 # Effect Types
@@ -51,89 +51,89 @@ Pedal.create(name: "Dr. Green Octa Dose", effecttype_id: 8, image_url: "http://a
 
 
 # # Pedalboards
-Pedalboard.create(name: 'Crazy Awesome Pedalboard', user_id: 1 )
-Pedalboard.create(name: 'Surf Board', user_id: 1)
-Pedalboard.create(name: 'All Aboard', user_id: 1)
-Pedalboard.create(name: 'Board of Directors', user_id: 1)
-Pedalboard.create(name: 'Chopin Board', user_id: 1)
-Pedalboard.create(name: 'The Board Room', user_id: 1)
-Pedalboard.create(name: 'Wish You Were Here', user_id: 1)
-Pedalboard.create(name: 'Us and Them', user_id: 1)
-Pedalboard.create(name: 'Pulse', user_id: 1)
-Pedalboard.create(name: 'Lucille', user_id: 1)
+# Pedalboard.create(name: 'Crazy Awesome Pedalboard', user_id: 1 )
+# Pedalboard.create(name: 'Surf Board', user_id: 1)
+# Pedalboard.create(name: 'All Aboard', user_id: 1)
+# Pedalboard.create(name: 'Board of Directors', user_id: 1)
+# Pedalboard.create(name: 'Chopin Board', user_id: 1)
+# Pedalboard.create(name: 'The Board Room', user_id: 1)
+# Pedalboard.create(name: 'Wish You Were Here', user_id: 1)
+# Pedalboard.create(name: 'Us and Them', user_id: 1)
+# Pedalboard.create(name: 'Pulse', user_id: 1)
+# Pedalboard.create(name: 'Lucille', user_id: 1)
 
 # # Boardpedals - pedals specific to a pedalboard. Boardpedal is a join table.
-Boardpedal.create(pedal_id:  1, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 5, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 6, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 20, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 7, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 3, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 11, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 13, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 12, pedalboard_id: 1)
-Boardpedal.create(pedal_id: 2, pedalboard_id: 1)
+# Boardpedal.create(pedal_id:  1, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 5, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 6, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 20, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 7, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 3, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 11, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 13, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 12, pedalboard_id: 1)
+# Boardpedal.create(pedal_id: 2, pedalboard_id: 1)
+#
+# Boardpedal.create(pedal_id: 3, pedalboard_id: 2)
+# Boardpedal.create(pedal_id: 4, pedalboard_id: 2)
+# Boardpedal.create(pedal_id: 5, pedalboard_id: 2)
+# Boardpedal.create(pedal_id: 21, pedalboard_id: 2)
+# Boardpedal.create(pedal_id: 22, pedalboard_id: 2)
+# Boardpedal.create(pedal_id: 8, pedalboard_id: 2)
+#
+# Boardpedal.create(pedal_id: 1, pedalboard_id: 3)
+# Boardpedal.create(pedal_id: 6, pedalboard_id: 3)
+# Boardpedal.create(pedal_id: 9, pedalboard_id: 3)
+# Boardpedal.create(pedal_id: 13, pedalboard_id: 3)
+# Boardpedal.create(pedal_id: 15, pedalboard_id: 3)
+# Boardpedal.create(pedal_id: 24, pedalboard_id: 3)
+#
+# Boardpedal.create(pedal_id: 8, pedalboard_id: 4)
+# Boardpedal.create(pedal_id: 9, pedalboard_id: 4)
+# Boardpedal.create(pedal_id: 10, pedalboard_id: 4)
+# Boardpedal.create(pedal_id: 11, pedalboard_id: 4)
+# Boardpedal.create(pedal_id: 12, pedalboard_id: 4)
+# Boardpedal.create(pedal_id: 13, pedalboard_id: 4)
+#
+# Boardpedal.create(pedal_id: 14, pedalboard_id: 5)
+# Boardpedal.create(pedal_id: 15, pedalboard_id: 5)
+# Boardpedal.create(pedal_id: 17, pedalboard_id: 5)
+# Boardpedal.create(pedal_id: 19, pedalboard_id: 5)
+# Boardpedal.create(pedal_id: 1, pedalboard_id: 5)
+# Boardpedal.create(pedal_id: 9, pedalboard_id: 5)
+#
+# Boardpedal.create(pedal_id: 18, pedalboard_id: 6)
+# Boardpedal.create(pedal_id: 7, pedalboard_id: 6)
+# Boardpedal.create(pedal_id: 22, pedalboard_id: 6)
+# Boardpedal.create(pedal_id: 9, pedalboard_id: 6)
+# Boardpedal.create(pedal_id: 5, pedalboard_id: 6)
+# Boardpedal.create(pedal_id: 2, pedalboard_id: 6)
 
-Boardpedal.create(pedal_id: 3, pedalboard_id: 2)
-Boardpedal.create(pedal_id: 4, pedalboard_id: 2)
-Boardpedal.create(pedal_id: 5, pedalboard_id: 2)
-Boardpedal.create(pedal_id: 21, pedalboard_id: 2)
-Boardpedal.create(pedal_id: 22, pedalboard_id: 2)
-Boardpedal.create(pedal_id: 8, pedalboard_id: 2)
-
-Boardpedal.create(pedal_id: 1, pedalboard_id: 3)
-Boardpedal.create(pedal_id: 6, pedalboard_id: 3)
-Boardpedal.create(pedal_id: 9, pedalboard_id: 3)
-Boardpedal.create(pedal_id: 13, pedalboard_id: 3)
-Boardpedal.create(pedal_id: 15, pedalboard_id: 3)
-Boardpedal.create(pedal_id: 24, pedalboard_id: 3)
-
-Boardpedal.create(pedal_id: 8, pedalboard_id: 4)
-Boardpedal.create(pedal_id: 9, pedalboard_id: 4)
-Boardpedal.create(pedal_id: 10, pedalboard_id: 4)
-Boardpedal.create(pedal_id: 11, pedalboard_id: 4)
-Boardpedal.create(pedal_id: 12, pedalboard_id: 4)
-Boardpedal.create(pedal_id: 13, pedalboard_id: 4)
-
-Boardpedal.create(pedal_id: 14, pedalboard_id: 5)
-Boardpedal.create(pedal_id: 15, pedalboard_id: 5)
-Boardpedal.create(pedal_id: 17, pedalboard_id: 5)
-Boardpedal.create(pedal_id: 19, pedalboard_id: 5)
-Boardpedal.create(pedal_id: 1, pedalboard_id: 5)
-Boardpedal.create(pedal_id: 9, pedalboard_id: 5)
-
-Boardpedal.create(pedal_id: 18, pedalboard_id: 6)
-Boardpedal.create(pedal_id: 7, pedalboard_id: 6)
-Boardpedal.create(pedal_id: 22, pedalboard_id: 6)
-Boardpedal.create(pedal_id: 9, pedalboard_id: 6)
-Boardpedal.create(pedal_id: 5, pedalboard_id: 6)
-Boardpedal.create(pedal_id: 2, pedalboard_id: 6)
-
-
-# Pedalreviews
-Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-Pedalreview.create(rating: 1, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
-
-
-Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
-
-
-Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
-Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
-Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
+#
+# # Pedalreviews
+# Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+# Pedalreview.create(rating: 1, comment: Faker::Hacker.say_something_smart, pedal_id: 1, user_id: 1)
+#
+#
+# Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 5, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 2, user_id: 1)
+#
+#
+# Pedalreview.create(rating: 4, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
+# Pedalreview.create(rating: 2, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
+# Pedalreview.create(rating: 3, comment: Faker::Hacker.say_something_smart, pedal_id: 3, user_id: 1)
