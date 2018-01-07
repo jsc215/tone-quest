@@ -110,56 +110,54 @@ class PedalFormContainer extends React.Component {
     this.handleClearForm(event);
   }
 }
-      handleClearForm(event) {
-        event.preventDefault();
-        this.setState({
-          name: '',
-          pedalType:'',
-          pedalDescription: '',
-          pedalImage: ''
-        });
-      }
-      render() {
-        return(
-            <form onSubmit={this.handleFormSubmit}>
-              <div className='row'>
-                <div className='six columns'>
-                  <TextField
-                    content={this.state.name}
-                    label="Pedal Name"
-                    name="name"
-                    onChange={this.handleChange}
-                  />
-                  <SelectField
-                    content={this.state.pedalType}
-                    label="Effect Type"
-                    name="pedalType"
-                    options= {['Overdrive', 'Distortion', 'Fuzz', 'Modulation', 'Reverb and Delay','Compression', 'Special Effect', 'Octavers and Harmonizers' ]}
-                    onChange={this.handleChange}
-                  />
-                  <TextField
-                    content={this.state.pedalDescription}
-                    label="Description"
-                    name="pedalDescription"
-                    onChange={this.handleChange}
-                  />
-                  <TextField
-                    content={this.state.pedalImage}
-                    label="Image Url"
-                    name="pedalImage"
-                    onChange={this.handleChange}
-                  />
-                </div>
-              </div>
 
-              <div className="row">
-                <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
-                <input className="button tiny" type="submit" value="Submit" />
-              </div>
-            </form>
+  handleClearForm(event) {
+    event.preventDefault();
+    this.setState({
+      name: '',
+      pedalType:'',
+      pedalDescription: '',
+      pedalImage: ''
+    });
+  }
 
+  render() {
+    return(
+      <form onSubmit={this.handleFormSubmit}>
+        <div className='row'>
+            <TextField
+              content={this.state.name}
+              label="Pedal Name"
+              name="name"
+              onChange={this.handleChange}
+            />
+            <SelectField
+              content={this.state.pedalType}
+              label="Effect Type"
+              name="pedalType"
+              options= {['Overdrive', 'Distortion', 'Fuzz', 'Modulation', 'Reverb and Delay','Compression', 'Special Effect', 'Octavers and Harmonizers' ]}
+              onChange={this.handleChange}
+            />
+            <TextField
+              content={this.state.pedalDescription}
+              label="Description"
+              name="pedalDescription"
+              onChange={this.handleChange}
+            />
+            <TextField
+              content={this.state.pedalImage}
+              label="Image Url"
+              name="pedalImage"
+              onChange={this.handleChange}
+            />
+        </div>
 
-          );
-        }
-      }
+        <div className="row">
+          <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
+          <input className="button tiny" type="submit" value="Submit" />
+        </div>
+      </form>
+    );
+  }
+}
 export default PedalFormContainer;

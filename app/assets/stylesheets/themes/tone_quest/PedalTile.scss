@@ -1,0 +1,23 @@
+.pedalTile{
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+   border: 3px double #170c0c;
+   padding: 10px;
+
+  p {
+    color: white;
+  }
+
+  img {
+    max-width: 200px;
+    max-height:120px;
+    margin-bottom: 3px;
+  }
+}
+
+
+// .pedalTile img {
+//   max-width: 200px;
+//   max-height:120px;
+//   margin-bottom: 3px;
+// }

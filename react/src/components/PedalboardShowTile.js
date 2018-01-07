@@ -1,18 +1,16 @@
 import React from 'react';
-import { Link} from 'react-router';
-
-  const PedalboardShowTile = props => {
-    return(
-        <div className= 'small-6 medium-4 large-3 cell pedalTile'>
-            <Link to={`/pedalboards`}>
-              <p>{props.pedalboardName}</p></Link>
-              <p>{props.pedalboardUser}</p>
-             </div>
-    );
-  };
+import { Link } from 'react-router';
 
 
+const PedalboardShowTile = props => {
+  return(
 
+      <div>
+          <Link to={`/pedals/${props.id}`}><img src={props.pedalImage}></img></Link>
+          <p>{props.pedalName}</p>
+        </div>
 
+  );
+};
 
 export default PedalboardShowTile;

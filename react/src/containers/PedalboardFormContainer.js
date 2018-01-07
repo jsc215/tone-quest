@@ -138,30 +138,29 @@ class PedalboardFormContainer extends React.Component{
     });
 
     return(
-        <form onSubmit={this.handleFormSubmit}>
-          <div className='callout'>
-            <div className='six columns'>
-              <TextField
-                content={this.state.name}
-                label="Pedalboard Name"
-                name="name"
-                onChange={this.handleChange}
-              />
-              <Select
-                placeholder='Select a Pedal'
-                name="form-field-name"
-                value={this.state.selectedOption.value}
-                onChange={this.handlePedalChange}
-                options={options}
-              />
-            </div>
-          </div>
-
-          <div className="row">
+      <form onSubmit={this.handleFormSubmit}>
+        <div className ='row'>
+          <div className='six columns'>
+            <TextField
+              content={this.state.name}
+              label="Pedalboard Name"
+              name="name"
+              onChange={this.handleChange}
+            />
+            <Select
+              placeholder='Select a Pedal'
+              name="form-field-name"
+              value={this.state.selectedOption.value}
+              onChange={this.handlePedalChange}
+              options={options}
+            />
+          <div>
             <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
             <input className="button tiny" type="submit" value="Submit" />
+            </div>
           </div>
-        </form>
+        </div>
+      </form>
     );
   }
 }
@@ -206,20 +205,20 @@ export default PedalboardFormContainer;
 
 
 
-//
+/* //
 //     this.handleFormSubmit = this.handleFormSubmit.bind(this);
 //     this.handleChange = this.handleChange.bind(this);
 //   }
 //
-//   handleChange(event) {
+//   handleChange(event)
 //     let newKey = event.target.name;
 //     let newValue = event.target.value;
-//     this.setState({
+//     this.setState({ */
 //       [newKey]: newValue
 //     });
 //   }
 //
-//   addNewPedalboard(newPedalboard) {
+/* //   addNewPedalboard(newPedalboard) { */
 //     fetch('/api/v1/pedalboards', {
 //       credentials: 'same-origin',
 //       method: 'POST',

@@ -4,14 +4,20 @@ class Api::V1::PedalsController < ApplicationController
 
   def index
     pedals = Pedal.all
+
     render json: pedals
+    # render json:{ pedals: pedals, user: current_user }
   end
 
   def show
     pedal = Pedal.find(params[:id])
+    pedalreviews = pedal.pedalreviews
+    pedalreviewnames = pedalreviews.map{ |review| "#{review.user.first_name} #{review.user.last_name}"}
     render json: {
       pedal: pedal,
-      effecttypename: pedal.effecttype.name
+      effecttypename: pedal.effecttype.name,
+      pedalreviews: pedalreviews,
+      pedalreviewnames: pedalreviewnames
     }
   end
 

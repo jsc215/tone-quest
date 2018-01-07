@@ -34,6 +34,16 @@ class Api::V1::PedalboardsController < ApplicationController
     end
   end
 
+  def update
+    if Pedalboard.update(params[:id], pedalboard_params)
+      pedalboard = Pedalboard.find(params[:id])
+      render json: pedalboard
+    else
+      render json: { error: venue.errors.full_messages }, status: :unprocessable_entity
+  end
+end
+
+
   private
 
   def pedalboard_params

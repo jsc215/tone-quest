@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :pedalreviews
   has_many :pedalboards
   has_many :pedals, through: :pedalboards
 

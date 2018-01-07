@@ -40,21 +40,22 @@ class PedalboardsContainer extends React.Component {
 
     let pedalboards = this.state.pedalboards.map(pedalboard => {
       return(
+
         <PedalboardTile
           key={pedalboard.id}
           id={pedalboard.id}
           pedalboardName={pedalboard.name}
-          userName={pedalboard.user.first_name}
+          userName={`${pedalboard.user.first_name} ${pedalboard.user.last_name}`}
         />
       );
     });
 
-      return (
-        <div className= "grid-x">
-          {pedalboards}
-        </div>
-      );
-    }
+    return (
+      <div className= 'grid-x'>
+        {pedalboards}
+      </div>
+    );
   }
+}
 
 export default PedalboardsContainer;

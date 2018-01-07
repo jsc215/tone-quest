@@ -5,4 +5,7 @@ class PedalSerializer < ActiveModel::Serializer
               :description,
               :effecttype_id,
               :effecttype
+              
+
+    has_many :pedalreviews
 end

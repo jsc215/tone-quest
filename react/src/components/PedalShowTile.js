@@ -3,12 +3,12 @@ import React from 'react';
 
 const PedalShowTile = props => {
   return(
-    <div className="grid-x">
-      <div className= "small 12 large 12 cell PedalShowImg">
-      <h1>{props.pedalName}</h1>
-        <h2>Effect Type: {props.pedalType}</h2>
+    <div>
+      <div className='show-box'>
+        <h3>{props.pedalName}</h3>
+        <h3>Effect Type: {props.pedalType}</h3>
+        <p id='show-box-desc'>{props.pedalDescription}</p>
         <img src={props.pedalImage}></img>
-          <p>{props.pedalDescription}</p>
       </div>
     </div>
   );

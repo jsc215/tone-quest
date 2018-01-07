@@ -1,0 +1,93 @@
+
+.reviewTile {
+  margin-top: 30px;
+}
+
+#review-box {
+  font-family: 'Oswald', sans-serif;
+  background-color: #a5bbbf;
+  padding: 40px;
+}
+
+#add-review-button {
+  margin-top: -34px;
+  margin-right: -30px;
+  padding: 7px 15px;
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: middle;
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+  transition: all .1s ease-in;
+  float: right;
+  border-radius: 70px;
+
+    &:hover{
+      background-color: rgba(250,240,230,1);
+      color: #211216;
+    }
+  }
+
+.show-box{
+  text-align: center;
+
+  img {
+    max-width: 30rem;
+    max-height:20rem;
+    margin-bottom: 5px;
+  }
+
+  h3 {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+
+#show-box-desc{
+  text-align: justify;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
+h1{
+ color: #726D55;
+ text-shadow: 1px 1px 0 #FFFFFF, 2px 2px 0 #000000;
+}
+
+h2{
+  color: #A97C4E;
+}
+
+@-webkit-keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {
+  -webkit-animation-name: hvr-pulse-shrink;
+  animation-name: hvr-pulse-shrink;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
