@@ -9,9 +9,8 @@ const NavBar = props => {
       <div>
         <Link to='/'>
         <h1 className="title">Tone Quest</h1></Link>
-
           <ul id= 'nav-bar' className= "menu align-center">
-            <li><Link className="hvr-bounce-in" to='/'></Link></li>
+            {/* <li><Link className="hvr-bounce-in" to='/'></Link></li> */}
             <li><Link className="hvr-bounce-in" to='/pedals' activeClassName='active'>See All Pedals</Link></li>
             <li><Link className="hvr-bounce-in" to={`/pedals/new`} activeClassName='active'>Add a Pedal</Link></li>
             {/* <li><Link className="hvr-bounce-in" to={`/users`} activeClassName='active'>User Page</Link></li> */}
@@ -22,7 +21,7 @@ const NavBar = props => {
         {props.children}
       </div>
 
-    )
-  }
+    );
+  };
 
 export default NavBar;

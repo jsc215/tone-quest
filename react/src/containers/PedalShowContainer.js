@@ -8,7 +8,8 @@ class PedalShowContainer extends React.Component {
     super(props);
     this.state = {
       pedal: {},
-      pedalreviews: []
+      pedalreviews: [],
+      pedalreviewnames: []
     };
   }
   componentDidMount() {
@@ -30,14 +31,15 @@ class PedalShowContainer extends React.Component {
 
       this.setState({
         pedal: body.pedal,
-        pedalreviews: body.pedalreviews
+        pedalreviews: body.pedalreviews,
+        pedalreviewnames: body.pedalreviewnames
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   mapPedalReviews() {
-    let pedalreviews = this.state.pedalreviews.map(pedalreview => {
+    let pedalreviews = this.state.pedalreviews.map((pedalreview, i) => {
       return(
 
         <PedalReviewTile
@@ -45,39 +47,36 @@ class PedalShowContainer extends React.Component {
           id={pedalreview.id}
           rating={pedalreview.rating}
           comment={pedalreview.comment}
-          user={pedalreview.user}
+          user={this.state.pedalreviewnames[i]}
         />
-
       );
-});
+    });
 
   return pedalreviews;
-}
+  }
 
   render () {
+    return(
+      <div className='row'>
+        <div className= 'column small-6'>
+          <PedalShowTile
+            key={this.state.pedal.id}
+            id={this.state.pedal.id}
+            pedalName={this.state.pedal.name}
+            pedalType={this.state.pedal.effecttypename}
+            pedalImage={this.state.pedal.image_url}
+            pedalDescription={this.state.pedal.description}
+          />
+        </div>
 
-    return (
-
-    <div>
-        <PedalShowTile
-          key={this.state.pedal.id}
-          id={this.state.pedal.id}
-          pedalName={this.state.pedal.name}
-          pedalType={this.state.pedal.effecttypename}
-          pedalImage={this.state.pedal.image_url}
-          pedalDescription={this.state.pedal.description}
-        />
-        {/* <div id='review-container'>
-          <div id='review-container-header' className= 'clearfix'> */}
-          <span className='review-box'>
-            <span><h2>Reviews:</h2>
-            <Link to={`/pedals/${this.state.pedal.id}/pedalreviews/new`} id='add-review-button'>Add a Review</Link></span>
-
-          {this.mapPedalReviews()}
-        </span>
+        <div className='column small-6'>
+          <div id='review-box'>
+            <span>Reviews:</span>
+            <Link to={`/pedals/${this.state.pedal.id}/pedalreviews/new`} id='add-review-button' className='hvr-pulse-shrink'>Add a Review</Link>
+            {this.mapPedalReviews()}
+          </div>
+        </div>
       </div>
-
-
     );
   }
 }

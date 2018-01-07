@@ -1,0 +1,41 @@
+#pagination {
+  text-align: center;
+  padding: 10px;
+}
+
+#page-number-container {
+  display: inline-block;
+  margin: auto;
+}
+
+ .custom-button {
+  padding: 7px 15px;
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: middle;
+  margin: 0 0 0 20px;
+  color: #211216;
+  text-decoration: none;
+  transition: all .1s ease-in;
+  height: auto;
+  line-height: 100%;
+  font-family: 'Raleway';
+  cursor: pointer;
+  border-radius: 60px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: normal;
+  box-shadow: 1px 2px 5px black;
+
+
+  &:hover{
+    background-color: #c59292;
+    color: #211216;
+  }
+}
+
+.custom-button.active{
+  background-color: #c59292;
+  color: #211216;
+  cursor: default;
+}

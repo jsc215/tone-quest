@@ -3,20 +3,15 @@ import React from 'react';
 
 const PedalShowTile = props => {
   return(
-    // <div className="grid-x" >
-
-      <div>
-        <div className='show-box'>
-          <h1>{props.pedalName}</h1>
-          <h2>Effect Type: {props.pedalType}</h2>
-          <p id='show-box-desc'>{props.pedalDescription}</p>
-          <img src={props.pedalImage}></img>
-        </div>
-
-        </div>
-
-    );
-
+    <div>
+      <div className='show-box'>
+        <h3>{props.pedalName}</h3>
+        <h3>Effect Type: {props.pedalType}</h3>
+        <p id='show-box-desc'>{props.pedalDescription}</p>
+        <img src={props.pedalImage}></img>
+      </div>
+    </div>
+  );
 };
 
 

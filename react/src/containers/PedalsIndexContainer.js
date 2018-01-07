@@ -36,7 +36,7 @@ class PedalsIndexContainer extends React.Component {
         currentUser: body.current_user
       });
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   componentDidMount () {
@@ -46,7 +46,7 @@ class PedalsIndexContainer extends React.Component {
   handlePagination(event) {
   this.setState({
     currentPage: Number(event.target.id)
-  });
+    });
   }
 
   render() {
@@ -73,36 +73,33 @@ class PedalsIndexContainer extends React.Component {
     const renderPageNumbers = pageNumbers.map(number => {
       let buttonclass;
       if(this.state.currentPage == number) {
-        buttonclass = 'button active'
+        buttonclass = 'custom-button active'
       } else {
-        buttonclass = 'button'
+        buttonclass = 'custom-button'
       }
       return (
-
-        <button
+        <div
           className={buttonclass}
           key={number}
           id={number}
           onClick={this.handlePagination}
         >
           {number}
-        </button>
+        </div>
       )
     })
-        return (
-          <div>
-            
-          <div className= "grid-x">
-              {pedals}
-            </div>
-            <div id='pagination'>
-          <div id='page-number-container'>
-            {renderPageNumbers}
-          </div>
+    return (
+      <div>
+        <div className= "grid-x">
+          {pedals}
         </div>
+          <div id='pagination'>
+            <div id='page-number-container'>
+              {renderPageNumbers}
+            </div>
+          </div>
       </div>
-
-        );
-      }
-    }
+    );
+  }
+}
 export default PedalsIndexContainer;

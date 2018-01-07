@@ -82,9 +82,10 @@ class PedalReviewFormContainer extends Component {
 
   render() {
     return(
-      <div id='review_form'>
-        <div id='errors'>{this.state.errors}</div>
-        <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit}>
+        <div className='row'>
+          <div className='six columns'>
+          {/* <div id='errors'>{this.state.errors}</div> */}
           <SelectField
             content={this.state.rating}
             label="Rating*"
@@ -98,12 +99,13 @@ class PedalReviewFormContainer extends Component {
             name="comment"
             onChange={this.handleChange}
           />
-          <div className="row">
-            <span className="button tiny" onClick={this.handleClearForm} >Clear</span>
+          <div>
+            <a className="button tiny" onClick={this.handleClearForm} >Clear</a>
             <input className="button tiny" type="submit" value="Submit" />
           </div>
-        </form>
-    </div>
+        </div>
+      </div>
+    </form>
     );
   }
 }

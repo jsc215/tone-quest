@@ -14,13 +14,11 @@ def create
     end
   end
 
-
   def pedalreview_params
     params.require(:pedalreview).permit(
       :rating,
       :comment,
       :pedal_id
-
     )
   end
 end
