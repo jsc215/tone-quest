@@ -15,7 +15,7 @@
  *= require foundation_and_overrides
  */
 
- /* @import 'react-select/dist/react-select.css'; */
+ @import 'react-select/dist/react-select.css';
  /**
   * React Select
   * ============
