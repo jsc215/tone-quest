@@ -15,6 +15,42 @@
  *= require foundation_and_overrides
  */
 
+ html{
+   margin: 0em 1em 0em 1em;
+ }
+
+
+ body {
+   background-color: #81979b;
+ }
+
+
+ form {
+   font-family: 'Oswald', sans-serif;
+ }
+
+
+ .hvr-bounce-in {
+   display: inline-block;
+   vertical-align: middle;
+   -webkit-transform: perspective(1px) translateZ(0);
+   transform: perspective(1px) translateZ(0);
+   box-shadow: 0 0 1px transparent;
+   -webkit-transition-duration: 0.5s;
+   transition-duration: 0.5s;
+ }
+
+ .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+ }
+
+ .button {
+   margin: 0px 3px 0px 0px;
+ }
+
  /* @import 'react-select/dist/react-select.css'; */
  /**
   * React Select
@@ -23,6 +59,7 @@
   * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
   * MIT License: https://github.com/JedWatson/react-select
  */
+
  .Select {
    position: relative;
  }
@@ -444,51 +481,6 @@
  }
 
 
-
-html{
-  margin: 0em 1em 0em 1em;
-}
-
-#google-sign-in {
-  border-color: black;
-  border-radius: 10px;
-}
-
-.google {
-  float: right;
-  }
-
-
-body {
-  background-color: #81979b;
-}
-
-
-form {
- font-family: 'Oswald', sans-serif;
-}
-
-
-.hvr-bounce-in {
- display: inline-block;
- vertical-align: middle;
- -webkit-transform: perspective(1px) translateZ(0);
- transform: perspective(1px) translateZ(0);
- box-shadow: 0 0 1px transparent;
- -webkit-transition-duration: 0.5s;
- transition-duration: 0.5s;
-}
-
-.hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
- -webkit-transform: scale(1.2);
- transform: scale(1.2);
- -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
- transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-}
-
-.button {
-  margin: 0px 3px 0px 0px;
-}
 
   /* .pedalBoardTile img {
     max-width: 280px;
