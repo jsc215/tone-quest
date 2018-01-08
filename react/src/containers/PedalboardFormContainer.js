@@ -3,7 +3,6 @@ import { Route, link, browserHistory } from 'react-router';
 import TextField from '../components/TextField';
 import Select from 'react-select';
 import { Async } from 'react-select';
-import { styles } from 'react-select';
 
 
 class PedalboardFormContainer extends React.Component{
