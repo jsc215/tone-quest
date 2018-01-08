@@ -1,0 +1,29 @@
+#google-sign-in {
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+  margin: 9px 25px 10px 213px;
+
+
+  a{
+    color: black;
+    font-family: 'Oswald', sans-serif;
+  }
+  &:hover{
+    background-color: #cfd7ea;
+    color: black;
+  }
+}
+
+
+#sign-in-message {
+  margin: -44px 55px 0px 0px;
+  font-family: 'Oswald', sans-serif;
+  font-style: italic;
+  text-align: center;
+}
+
+.google {
+  float: right;
+  font-family: sans-serif;
+}
