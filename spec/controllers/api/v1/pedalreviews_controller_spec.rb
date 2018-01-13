@@ -28,14 +28,14 @@ RSpec.describe Api::V1::PedalreviewsController, type: :controller do
        {
          pedalreview:
            {
-             rating: '3',
+             rating: 3,
              comment: 'awesome',
              pedal_id: pedal.id
 
            }
        }
-         expect(response).to have_http_status :ok
-     # expect { post :create, params: params}.to change(Pedalreview, :count).by(1)
-   end
- end
+      expect(response).to have_http_status :ok
+      # expect { post :create, params: params}.to change(Pedalreview, :count).by(1)
+    end
+  end
 end
