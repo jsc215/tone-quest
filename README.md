@@ -12,6 +12,8 @@
 * Postgres
 * API
 
+##### Heroku Link: https://tone-quest.herokuapp.com
+
 ##### Badges:
 
 [ ![Codeship Status for jsc215/tone-quest](https://app.codeship.com/projects/266a4440-bee0-0135-926e-72379a217d2f/status?branch=master)](https://app.codeship.com/projects/259936)
