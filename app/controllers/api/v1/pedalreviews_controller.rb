@@ -1,11 +1,16 @@
 class Api::V1::PedalreviewsController < ApplicationController
 skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
 
+# def index
+#   pedalreview = Pedalreview.all
+#   render json: pedalreview
+# end
+
 def create
     pedalreview = Pedalreview.new(pedalreview_params)
     # pedalreview.rating.to_i
     pedalreview.user = current_user
-    # pedalreview.pedal = Pedalreview.where(id: pedalreview_params[:pedal_id])
+    pedalreview.pedal = Pedal.where(:id=> pedalreview_params['pedal_id']).first
     if pedalreview.save
       render json: pedalreview
     else
