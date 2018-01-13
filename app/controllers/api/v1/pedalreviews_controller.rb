@@ -5,7 +5,7 @@ def create
     pedalreview = Pedalreview.new(pedalreview_params)
     # pedalreview.rating.to_i
     pedalreview.user = current_user
-    pedalreview.pedal = Pedal.find(params[:pedal_id])
+    # pedalreview.pedal = Pedalreview.where(id: pedalreview_params[:pedal_id])
     if pedalreview.save
       render json: pedalreview
     else
