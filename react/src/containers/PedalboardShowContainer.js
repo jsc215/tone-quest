@@ -176,7 +176,7 @@ class PedalboardShowContainer extends React.Component {
 
     return (
       <div className='grid-x'>
-        <span id='save-button' className ='hollow button hvr-pulse-shrink' onClick={this.onSave}>Save Mofo!</span>
+        <span id='save-button' className ='hollow button hvr-pulse-shrink' onClick={this.onSave}>Save this layout!</span>
       <div className="pedalboard">
         {pedalBoardPedals}
       </div>

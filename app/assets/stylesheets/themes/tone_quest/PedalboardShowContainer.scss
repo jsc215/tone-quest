@@ -24,10 +24,12 @@ margin-top: 15px;
 }
 
 #save-button{
+  font-family:'Oswald', sans-serif;
   border-color: black;
   border-radius: 10px;
   box-shadow: 2px 2px black;
   float:right;
+  color: black;
   // margin: 0em 5em 25em 4em;
   &:hover{
     background-color: #cfd7ea;
