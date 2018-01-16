@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-// import PedalboardTile from '../components/PedalboardTile';
 import PedalboardShowTile from '../components/PedalboardShowTile';
 import Draggable from 'react-draggable';
-import {DraggableCore} from 'react-draggable';
-import { Link } from 'react-router';
+// import {DraggableCore} from 'react-draggable';
+import { Link, browserHistory } from 'react-router';
 
 class PedalboardShowContainer extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       pedalboard: {},
+      boardpedals: [],
       pedalboardpedals: [],
       activeDrags: 0,
+      currentPositions: [],
       deltaPosition: {
        x: 0, y: 0
      },
      controlledPosition: {
        x: -400, y: 200
+       // x: 0, y: 0
      }
    };
+   this.onStart = this.onStart.bind(this);
+   this.onStop = this.onStop.bind(this);
+   this.onControlledDrag = this.onControlledDrag.bind(this);
+   this.onControlledDragStop = this.onControlledDragStop.bind(this);
+   this.onSave = this.onSave.bind(this);
+
  }
+
 
  handleDrag(e, ui) {
    const {x, y} = this.state.deltaPosition;
@@ -62,8 +71,55 @@ class PedalboardShowContainer extends React.Component {
   }
 
   onControlledDragStop(e, position) {
+    // debugger
+    let pedalboardpedals = this.state.pedalboardpedals
+    let index = -1
+    for(let i = 0; i < pedalboardpedals.length; i++){
+      if(pedalboardpedals[i].name === e.target.textContent){
+        index = i
+        break;
+      }
+    }
+
+    let currentPositions = this.state.currentPositions
+    // debugger
+    currentPositions[index] = {x: position.x, y: position.y}
+
     this.onControlledDrag(e, position);
+    this.setState({
+      currentPositions: currentPositions
+    })
     this.onStop();
+  }
+
+  onSave(){
+    this.state.boardpedals.map((boardpedal, i) =>{
+      boardpedal.x = this.state.currentPositions[i].x
+      boardpedal.y = this.state.currentPositions[i].y
+
+      fetch(`/api/v1/boardpedals/${boardpedal.id}`, {
+        credentials: 'same-origin',
+        method: 'PATCH',
+        body: JSON.stringify(boardpedal),
+        headers: {'Content-Type': 'application/json'}
+      })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+          error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        browserHistory.push(`/pedalboards/${this.props.params.id}`);
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
+
+    })
+    alert('saved')
   }
 
   componentDidMount() {
@@ -82,21 +138,31 @@ class PedalboardShowContainer extends React.Component {
     .then(response => response.json())
     .then(body => {
 
+      let currentPositions = body.boardpedals.map((boardpedal) =>{
+        return {x: boardpedal.x, y: boardpedal.y}
+      })
+
       this.setState({
         pedalboard: body.pedalboard,
-        pedalboardpedals: body.pedalboardpedals
-
+        pedalboardpedals: body.pedals,
+        boardpedals: body.boardpedals,
+        currentPositions: currentPositions
       });
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  mapBoardPedals(){
 
-    let pedalBoardPedals = this.state.pedalboardpedals.map(pedal =>{
+  render () {
+    const dragHandlers = {onStart: this.onControlledDrag, onStop: this.onControlledDragStop};
+    const {deltaPosition, controlledPosition} = this.state;
+    let pedalBoardPedals = this.state.pedalboardpedals.map((pedal, i) =>{
       return(
 
-        <Draggable key={pedal.id}>
+        <Draggable
+          bounds = "body"
+          position={{x: this.state.currentPositions[i].x, y: this.state.currentPositions[i].y}} {...dragHandlers}
+          key={pedal.id}>
           <div className='pedalBoardTile'>
             <PedalboardShowTile
               id={pedal.id}
@@ -107,18 +173,14 @@ class PedalboardShowContainer extends React.Component {
         </Draggable>
       );
     });
-    
-    return pedalBoardPedals;
-  }
-
-  render () {
-    const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
-    const {deltaPosition, controlledPosition} = this.state;
 
     return (
+      <div className='grid-x'>
+        <span id='save-button' className ='hollow button hvr-pulse-shrink' onClick={this.onSave}>Save Mofo!</span>
       <div className="pedalboard">
-        {this.mapBoardPedals()}
+        {pedalBoardPedals}
       </div>
+    </div>
     );
   }
 }

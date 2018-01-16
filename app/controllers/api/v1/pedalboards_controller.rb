@@ -10,9 +10,11 @@ class Api::V1::PedalboardsController < ApplicationController
 
   def show
     pedalboard = Pedalboard.find(params[:id])
+    # binding.pry
     render json: {
       pedalboard: pedalboard,
-      pedalboardpedals: pedalboard.pedals,
+      boardpedals: pedalboard.boardpedals,
+      pedals: pedalboard.pedals,
       user: pedalboard.user.first_name
     }
   end

@@ -1,7 +1,8 @@
 .pedalboard {
 background: url('terra.png') no-repeat center center;
 height: 40em;
-width: 100%
+width: 100%;
+margin-top: 15px;
 }
 
 .pedalBoardTile {
@@ -20,4 +21,15 @@ width: 100%
   max-width: 280px;
   max-height:200px;
   margin-bottom: 3px;
+}
+
+#save-button{
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 2px 2px black;
+  float:right;
+  // margin: 0em 5em 25em 4em;
+  &:hover{
+    background-color: #cfd7ea;
+  }
 }
