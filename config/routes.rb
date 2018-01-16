@@ -18,7 +18,7 @@ Rails.application.routes.draw do
         resources :pedalreviews
       end
       resources :pedalreviews, only: [:index, :create, :update]
-      resources :boardpedals, only: [:create]
+      resources :boardpedals, only: [:create, :update]
       resources :users
       resources :pedalboards
         end

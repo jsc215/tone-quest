@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103202819) do
+ActiveRecord::Schema.define(version: 20180115170240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20180103202819) do
     t.bigint "pedalboard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "x"
+    t.integer "y"
     t.index ["pedal_id"], name: "index_boardpedals_on_pedal_id"
     t.index ["pedalboard_id"], name: "index_boardpedals_on_pedalboard_id"
   end
