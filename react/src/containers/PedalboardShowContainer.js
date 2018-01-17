@@ -160,7 +160,6 @@ class PedalboardShowContainer extends React.Component {
       return(
 
         <Draggable
-          bounds = "body"
           position={{x: this.state.currentPositions[i].x, y: this.state.currentPositions[i].y}} {...dragHandlers}
           key={pedal.id}>
           <div className='pedalBoardTile'>
