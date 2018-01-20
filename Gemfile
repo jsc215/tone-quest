@@ -34,7 +34,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'launchy', require: false
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
