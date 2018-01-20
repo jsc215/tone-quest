@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'faker'
+gem 'pry-rails'
 
 group :test do
   gem 'coveralls', require: false
