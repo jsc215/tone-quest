@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PedalboardShowTile from '../components/PedalboardShowTile';
 import Draggable from 'react-draggable';
-// import {DraggableCore} from 'react-draggable';
+import {DraggableCore} from 'react-draggable';
 import { Link, browserHistory } from 'react-router';
 
 class PedalboardShowContainer extends React.Component {
