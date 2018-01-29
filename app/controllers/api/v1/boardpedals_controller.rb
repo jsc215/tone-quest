@@ -26,7 +26,6 @@ class Api::V1::BoardpedalsController < ApplicationController
     end
   end
 
-
 private
 
   def boardpedal_params

@@ -1,7 +1,6 @@
 # PedalboardsController
 class Api::V1::PedalboardsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
-  # skip_before_action :verify_authenticity_token, only: [:index, :show]
 
   def index
     pedalboards = Pedalboard.all
@@ -24,11 +23,11 @@ class Api::V1::PedalboardsController < ApplicationController
     pedalboard.user = current_user
     pedals = pedalboard.pedals
 
-    if pedalboard.save
-    if params['pedal']['value']
+    if pedalboard.save!
+    # if params['pedal']['value']
       newBP = Boardpedal.new(pedalboard_id: pedalboard.id, pedal_id: params['pedal']['value'])
       newBP.save
-    end
+    # end
       render json: pedalboard
     else
       render json:
@@ -45,13 +44,10 @@ class Api::V1::PedalboardsController < ApplicationController
   end
 end
 
-
   private
-
   def pedalboard_params
     params.require(:pedalboard).permit(
-      :name,
-      :user_id
+      :name
     )
   end
 end

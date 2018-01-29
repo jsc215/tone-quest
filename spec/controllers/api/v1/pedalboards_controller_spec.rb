@@ -36,32 +36,22 @@ RSpec.describe Api::V1::PedalboardsController, type: :controller do
   describe 'POST#create' do
     it 'should create a pedalboard with valid params' do
       user = FactoryBot.create(:user)
-
-      #   id: 1000,
-      #   name: 'test',
-      #   description:'testing',
-      #   image_url: 'stuff.com',
-      #   effecttype_id: 1
-
-      # pb= FactoryBot.create(:pedalboard, user: user)
-      bp = Boardpedal.create(pedal_id: 1, pedalboard_id: 1)
+      e = FactoryBot.create(:effecttype)
+      pedal = FactoryBot.create(:pedal, effecttype: e)
+      pedalboard = FactoryBot.create(:pedalboard, user_id: user.id)
+      bp = FactoryBot.create(:boardpedal, pedal_id: pedal.id, pedalboard_id: pedalboard.id)
 
       params = {
         pedalboard: {
-          name: 'Awesome board',
-          user_id: user.id
-        #   pedal: {
-        #     value: 1,
-        #     name: 'Boss Blues Driver',
-        #     image_url: 'stuff.com',
-        #     effecttype_id: 1
-        #   }
-        # }
+          name: 'best pedalboard'
+        },
+        pedal: {
+          value: pedal.id
+        }
       }
-    }
-
+      
       expect(response).to have_http_status :ok
-      # expect { post :create, params: params }.to change(Pedalboard, :count).by(1)
+      expect { post :create, params: params }.to change(Pedalboard, :count).by(1)
     end
   end
 end

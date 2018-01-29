@@ -1,12 +1,9 @@
 class Api::V1::PedalsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
-  # skip_before_action :require_signin!, except: [:create, :delete]
 
   def index
     pedals = Pedal.all
-
     render json: pedals
-    # render json:{ pedals: pedals, user: current_user }
   end
 
   def show
@@ -31,7 +28,7 @@ class Api::V1::PedalsController < ApplicationController
         { error: pedal.errors.full_messages }, status: :unprocessable_entity
     end
   end
-
+  
 private
 
   def pedal_params
