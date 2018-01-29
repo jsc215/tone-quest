@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
 
 RSpec.describe Api::V1::PedalsController, type: :controller do
 
@@ -51,6 +50,26 @@ RSpec.describe Api::V1::PedalsController, type: :controller do
 
       expect { post :create, params: params }.to change(Pedal, :count).by(1)
       expect(response).to have_http_status :ok
+    end
+
+    it 'returns json with errors if unsuccessful' do
+      post :create, params:
+      {
+      pedal: {
+        name: '',
+        description: '',
+        image_url: '',
+        effecttype_id: ''
+        }
+      }
+
+      json = JSON.parse(response.body)
+      expect(json['error']).to be_truthy
+      expect(json['error'].class).to eq(Array)
+
+      expect(json['error']).to include("Effecttype must exist")
+      expect(json['error']).to include("Name can't be blank")
+      expect(json['error']).to include("Image url can't be blank")
     end
   end
 end

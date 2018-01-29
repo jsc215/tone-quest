@@ -23,7 +23,8 @@ def create
     params.require(:pedalreview).permit(
       :rating,
       :comment,
-      :pedal_id
+      :pedal_id,
+      :user_id
     )
   end
 end

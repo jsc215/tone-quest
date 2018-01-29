@@ -9,12 +9,11 @@ class Api::V1::PedalboardsController < ApplicationController
 
   def show
     pedalboard = Pedalboard.find(params[:id])
-    # binding.pry
     render json: {
       pedalboard: pedalboard,
       boardpedals: pedalboard.boardpedals,
       pedals: pedalboard.pedals,
-      user: pedalboard.user.first_name
+      user: current_user
     }
   end
 
@@ -47,7 +46,8 @@ end
   private
   def pedalboard_params
     params.require(:pedalboard).permit(
-      :name
+      :name,
+      :user_id
     )
   end
 end

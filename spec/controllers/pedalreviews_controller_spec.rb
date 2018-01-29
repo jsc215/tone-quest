@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+
 
 RSpec.describe PedalreviewsController, type: :controller do
   describe 'GET#new' do
