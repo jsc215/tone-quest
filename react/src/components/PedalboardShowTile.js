@@ -8,6 +8,7 @@ const PedalboardShowTile = props => {
       <div>
           <Link to={`/pedals/${props.id}`}><img src={props.pedalImage}></img></Link>
           <p>{props.pedalName}</p>
+          <p>{props.userName}</p>
         </div>
 
   );

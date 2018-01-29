@@ -11,7 +11,7 @@ def create
     # pedalreview.rating.to_i
     pedalreview.user = current_user
     pedalreview.pedal = Pedal.where(:id=> pedalreview_params['pedal_id']).first
-    if pedalreview.save
+    if pedalreview.save!
       render json: pedalreview
     else
       render json:
