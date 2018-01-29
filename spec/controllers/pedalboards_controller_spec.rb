@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+
 
 RSpec.describe PedalboardsController, type: :controller do
   describe 'GET index' do

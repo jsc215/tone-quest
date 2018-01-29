@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'spec_helper'
 
 RSpec.describe Pedal, type: :model do
   it { should have_valid(:name).when('Boss Blues Driver') }

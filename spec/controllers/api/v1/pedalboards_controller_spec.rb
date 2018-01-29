@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-
-
 RSpec.describe Api::V1::PedalboardsController, type: :controller do
 
   describe 'GET index' do
@@ -38,18 +36,18 @@ RSpec.describe Api::V1::PedalboardsController, type: :controller do
       user = FactoryBot.create(:user)
       e = FactoryBot.create(:effecttype)
       pedal = FactoryBot.create(:pedal, effecttype: e)
-      pedalboard = FactoryBot.create(:pedalboard, user_id: user.id)
+      pedalboard = FactoryBot.create(:pedalboard, user: user)
       bp = FactoryBot.create(:boardpedal, pedal_id: pedal.id, pedalboard_id: pedalboard.id)
 
       params = {
         pedalboard: {
-          name: 'best pedalboard'
+          name: 'best pedalboard',
+          user_id: user.id
         },
         pedal: {
           value: pedal.id
         }
       }
-      
       expect(response).to have_http_status :ok
       expect { post :create, params: params }.to change(Pedalboard, :count).by(1)
     end
