@@ -2,8 +2,6 @@
 
 ##### Name: Tone Quest
 
-##### Ruby Version 2.3.3
-
 ##### Author: Jeff Comer
 
 ##### Technologies:
