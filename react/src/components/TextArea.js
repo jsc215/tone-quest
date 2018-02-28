@@ -11,7 +11,6 @@ const TextArea = (props) => {
         onChange={props.onChange}
       />
     </div>
-
   );
 };
 

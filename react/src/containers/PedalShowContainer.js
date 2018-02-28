@@ -51,9 +51,7 @@ class PedalShowContainer extends React.Component {
         />
       );
     });
-
   return pedalreviews;
-  
   }
 
   render () {

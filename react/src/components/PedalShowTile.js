@@ -1,5 +1,4 @@
 import React from 'react';
-// import {browserHistory, Link} from 'react-router';
 
 const PedalShowTile = props => {
   return(
@@ -13,10 +12,5 @@ const PedalShowTile = props => {
     </div>
   );
 };
-
-
-
-
-
 
 export default PedalShowTile;

@@ -19,19 +19,17 @@ class PedalboardShowContainer extends React.Component {
      },
      controlledPosition: {
        x: -400, y: 200
-       // x: 0, y: 0
      }
    };
+   
    this.onStart = this.onStart.bind(this);
    this.onStop = this.onStop.bind(this);
    this.onControlledDrag = this.onControlledDrag.bind(this);
    this.onControlledDragStop = this.onControlledDragStop.bind(this);
    this.onSave = this.onSave.bind(this);
+  }
 
- }
-
-
- handleDrag(e, ui) {
+  handleDrag(e, ui) {
    const {x, y} = this.state.deltaPosition;
    this.setState({
      deltaPosition: {
@@ -41,15 +39,13 @@ class PedalboardShowContainer extends React.Component {
    });
  }
 
- onStart() {
+  onStart() {
     this.setState({activeDrags: ++this.state.activeDrags});
   }
-
 
   onStop() {
     this.setState({activeDrags: --this.state.activeDrags});
   }
-
 
   adjustXPos(e) {
     e.preventDefault();
@@ -72,31 +68,26 @@ class PedalboardShowContainer extends React.Component {
   }
 
   onControlledDragStop(e, position) {
-    // debugger
-    let pedalboardpedals = this.state.pedalboardpedals
-    let index = -1
+    let pedalboardpedals = this.state.pedalboardpedals;
+    let index = -1;
     for(let i = 0; i < pedalboardpedals.length; i++){
       if(pedalboardpedals[i].name === e.target.textContent){
-        index = i
+        index = i;
         break;
       }
     }
 
-    let currentPositions = this.state.currentPositions
-    // debugger
-    currentPositions[index] = {x: position.x, y: position.y}
-
+    let currentPositions = this.state.currentPositions;
+    currentPositions[index] = {x: position.x, y: position.y};
     this.onControlledDrag(e, position);
-    this.setState({
-      currentPositions: currentPositions
-    })
+    this.setState({ currentPositions: currentPositions });
     this.onStop();
   }
 
   onSave(){
-    this.state.boardpedals.map((boardpedal, i) =>{
-      boardpedal.x = this.state.currentPositions[i].x
-      boardpedal.y = this.state.currentPositions[i].y
+    this.state.boardpedals.map((boardpedal, i) => {
+      boardpedal.x = this.state.currentPositions[i].x;
+      boardpedal.y = this.state.currentPositions[i].y;
 
       fetch(`/api/v1/boardpedals/${boardpedal.id}`, {
         credentials: 'same-origin',
@@ -118,9 +109,8 @@ class PedalboardShowContainer extends React.Component {
         browserHistory.push(`/pedalboards/${this.props.params.id}`);
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-
-    })
-    alert('saved')
+    });
+    alert('saved');
   }
 
   componentDidMount() {
@@ -138,12 +128,11 @@ class PedalboardShowContainer extends React.Component {
     })
     .then(response => response.json())
     .then(body => {
+      let currentPositions = body.boardpedals.map((boardpedal) => {
+        return {x: boardpedal.x, y: boardpedal.y};
+      });
 
-      let currentPositions = body.boardpedals.map((boardpedal) =>{
-        return {x: boardpedal.x, y: boardpedal.y}
-      })
-
-      this.setState({
+      this.setState ({
         pedalboard: body.pedalboard,
         pedalboardpedals: body.pedals,
         boardpedals: body.boardpedals,
@@ -153,13 +142,11 @@ class PedalboardShowContainer extends React.Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-
   render () {
     const dragHandlers = {onStart: this.onControlledDrag, onStop: this.onControlledDragStop};
     const {deltaPosition, controlledPosition} = this.state;
-    let pedalBoardPedals = this.state.pedalboardpedals.map((pedal, i) =>{
+    let pedalBoardPedals = this.state.pedalboardpedals.map((pedal, i) => {
       return(
-
         <Draggable
           position={{x: this.state.currentPositions[i].x, y: this.state.currentPositions[i].y}} {...dragHandlers}
           key={pedal.id}>
