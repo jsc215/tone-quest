@@ -16,6 +16,7 @@ class PedalFormContainer extends React.Component {
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
+
   handleChange(event) {
     let newKey = event.target.name;
     let newValue = event.target.value;
@@ -70,30 +71,6 @@ class PedalFormContainer extends React.Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  // componentDidMount() {
-  //   if(this.props.params.id){
-  //     fetch(`/api/v1/pedals/${this.props.params.id}`)
-  //     .then(response => {
-  //       if (response.ok) {
-  //         return response;
-  //       } else {
-  //         let errorMessage = `${response.status} (${response.statusText})`,
-  //         error = new Error(errorMessage);
-  //         throw(error);
-  //       }
-  //     })
-  //     .then(response => response.json())
-  //     .then(body => {
-  //       this.setState({
-  //         name: body.name,
-  //         pedalType: body.effecttype_id,
-  //         pedalDescription: body.description,
-  //         pedalImage: body.image_url
-  //       })
-  //     })
-  //     .catch(error => console.error(`Error in fetch: ${error.message}`));
-  //   }
-  // }
   handleFormSubmit(event) {
     event.preventDefault();
     let formPayload = {
@@ -132,10 +109,10 @@ class PedalFormContainer extends React.Component {
               onChange={this.handleChange}
             />
             <SelectField
-              content={this.state.pedalType}
-              label="Effect Type"
+              effectOption={this.state.pedalType}
+              label="Choose Effect Type"
               name="pedalType"
-              options= {['Overdrive', 'Distortion', 'Fuzz', 'Modulation', 'Reverb and Delay','Compression', 'Special Effect', 'Octavers and Harmonizers' ]}
+              options={['Overdrive', 'Distortion', 'Fuzz', 'Modulation', 'Reverb and Delay','Compression', 'Special Effect', 'Octavers and Harmonizers' ]}
               onChange={this.handleChange}
             />
             <TextField
@@ -151,7 +128,6 @@ class PedalFormContainer extends React.Component {
               onChange={this.handleChange}
             />
         </div>
-
         <div className="row">
           <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
           <input className="button tiny" type="submit" value="Submit" />

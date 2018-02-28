@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PedalboardTile from '../components/PedalboardTile';
 import {browserHistory, Link} from 'react-router';
 
-
 class PedalboardsContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -37,10 +36,8 @@ class PedalboardsContainer extends React.Component {
   }
 
   render() {
-
     let pedalboards = this.state.pedalboards.map(pedalboard => {
       return(
-
         <PedalboardTile
           key={pedalboard.id}
           id={pedalboard.id}
