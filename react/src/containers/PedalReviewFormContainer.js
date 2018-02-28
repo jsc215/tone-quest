@@ -4,7 +4,6 @@ import TextField from '../components/TextField';
 import SelectField from '../components/SelectField';
 import TextArea from '../components/TextArea';
 
-
 class PedalReviewFormContainer extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +34,7 @@ class PedalReviewFormContainer extends Component {
       comment: this.state.comment,
       pedal_id: this.state.pedal_id
     };
-    console.log(formPayload)
+    console.log(formPayload);
     this.addNewPedalReview(formPayload);
     this.handleClearForm(event);
   }

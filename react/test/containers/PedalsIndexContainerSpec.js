@@ -17,12 +17,13 @@ describe('PedalsIndexContainer', () => {
   it ('should have the specified initial state', ()=> {
     expect(wrapper.state()).toEqual({
       pedals: [],
+      initialPedals: [],
+      effectOption: '',
       currentUser: null,
       currentPage: 1,
       pedalsPerPage: 9
     });
   });
-
 });
 
   // it('should render a PedalTile Component', () => {

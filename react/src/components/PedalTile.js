@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
 const PedalTile = props => {
   return(
       <div className='small-12 medium-4 large-4 cell pedalTile'>
