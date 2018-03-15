@@ -5,10 +5,16 @@
 ##### Author: Jeff Comer
 
 ##### Technologies:
+
 * Ruby on Rails
 * React.js
 * Postgres
 * API
+
+##### Features to add or improve:
+
+* Audio for pedal sound experimentation
+* Drag works but drop only works when clicking the title of the pedal. If the user clicks the pedal it doesn't drop.
 
 ##### Heroku Link: https://tone-quest.herokuapp.com
 
