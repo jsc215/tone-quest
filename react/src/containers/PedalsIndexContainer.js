@@ -45,7 +45,6 @@ class PedalsIndexContainer extends React.Component {
     })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
   componentDidMount() {
     this.getPedals();
   }
@@ -88,7 +87,6 @@ class PedalsIndexContainer extends React.Component {
         />
       );
     });
-
     const pageNumbers = [];
       for (let i = 1; i <= Math.ceil(this.state.pedals.length / this.state.pedalsPerPage); i++) {
         pageNumbers.push(i);

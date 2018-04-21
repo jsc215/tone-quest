@@ -21,7 +21,7 @@ class PedalboardShowContainer extends React.Component {
        x: -400, y: 200
      }
    };
-   
+
    this.onStart = this.onStart.bind(this);
    this.onStop = this.onStop.bind(this);
    this.onControlledDrag = this.onControlledDrag.bind(this);

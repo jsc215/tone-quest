@@ -42,12 +42,14 @@ class PedalReviewFormContainer extends Component {
   processResponse(response) {
     return new Promise((resolve, reject) => {
       let func;
-      response.status < 400 ? func = resolve : func = reject;
-      response.json().then(data => func({'status': response.status,
-                                         'statusText': response.statusText,
-                                         'data': data
-                                       })
-                          );
+      response.status < 400 ? (func = resolve) : (func = reject);
+      response.json().then((data) =>
+        func({
+          status: response.status,
+          statusText: response.statusText,
+          data: data
+        })
+      );
     });
   }
 
@@ -56,22 +58,22 @@ class PedalReviewFormContainer extends Component {
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(newPedalReview),
-      headers: {'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json' }
     })
-    .then(response => this.processResponse(response))
-    .then(body => {
-      browserHistory.push(`/pedals/${this.state.pedal_id}`);
-    })
-    .catch(response => {
-      this.setState({
-        errors: response.data.errors
+      .then((response) => this.processResponse(response))
+      .then((body) => {
+        browserHistory.push(`/pedals/${this.state.pedal_id}`);
+      })
+      .catch((response) => {
+        this.setState({
+          errors: response.data.errors
+        });
+        let errorMessage = `${response.status} (${response.statusText})`;
+        console.error(`Error in fetch: ${errorMessage}`);
       });
-      let errorMessage = `${response.status} (${response.statusText})`;
-      console.error(`Error in fetch: ${errorMessage}`);
-    });
   }
 
-  handleClearForm(event){
+  handleClearForm(event) {
     event.preventDefault();
     this.setState({
       rating: '',
@@ -80,31 +82,33 @@ class PedalReviewFormContainer extends Component {
   }
 
   render() {
-    return(
+    return (
       <form onSubmit={this.handleFormSubmit}>
-        <div className='row'>
-          <div className='six columns'>
-          {/* <div id='errors'>{this.state.errors}</div> */}
-          <SelectField
-            content={this.state.rating}
-            label="Rating*"
-            name="rating"
-            options={[1, 2, 3, 4, 5]}
-            onChange={this.handleChange}
-          />
-          <TextArea
-            content={this.state.comment}
-            label="Review"
-            name="comment"
-            onChange={this.handleChange}
-          />
-          <div>
-            <a className="button tiny" onClick={this.handleClearForm} >Clear</a>
-            <input className="button tiny" type="submit" value="Submit" />
+        <div className="row">
+          <div className="six columns">
+            {/* <div id='errors'>{this.state.errors}</div> */}
+            <SelectField
+              content={this.state.rating}
+              label="Rating*"
+              name="rating"
+              options={[1, 2, 3, 4, 5]}
+              onChange={this.handleChange}
+            />
+            <TextArea
+              content={this.state.comment}
+              label="Review"
+              name="comment"
+              onChange={this.handleChange}
+            />
+            <div>
+              <a className="button tiny" onClick={this.handleClearForm}>
+                Clear
+              </a>
+              <input className="button tiny" type="submit" value="Submit" />
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
     );
   }
 }
