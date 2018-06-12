@@ -42,7 +42,7 @@ class PedalboardsContainer extends React.Component {
           key={pedalboard.id}
           id={pedalboard.id}
           pedalboardName={pedalboard.name}
-          userName={`${pedalboard.user.first_name} ${pedalboard.user.last_name}`}
+          // userName={`${pedalboard.user.first_name} ${pedalboard.user.last_name}`}
         />
       );
     });

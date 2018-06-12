@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {browserHistory, Link} from 'react-router';
 import PedalTile from '../components/PedalTile';
-import PedalFormContainer from './PedalFormContainer';
 import SelectField from '../components/SelectField';
 
 
-class PedalsIndexContainer extends React.Component {
+class PedalsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
