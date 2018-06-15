@@ -9,7 +9,7 @@ class Api::V1::PedalsController < ApplicationController
   def show
     pedal = Pedal.find(params[:id])
     pedalreviews = pedal.pedalreviews
-    pedalreviewnames = pedalreviews.map{ |review| "#{review.user.first_name} #{review.user.last_name}"}
+    pedalreviewnames = pedalreviews.map { |review| "#{review.user.first_name} #{review.user.last_name}"}
     render json: {
       pedal: pedal,
       effecttypename: pedal.effecttype.name,
@@ -28,8 +28,8 @@ class Api::V1::PedalsController < ApplicationController
         { error: pedal.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  
-private
+
+  private
 
   def pedal_params
     params.require(:pedal).permit(

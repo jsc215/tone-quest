@@ -20,7 +20,7 @@ class Api::V1::PedalboardsController < ApplicationController
   def create
     pedalboard = Pedalboard.new(pedalboard_params)
     pedalboard.user = current_user
-    pedals = pedalboard.pedals
+    # pedals = pedalboard.pedals
 
     if pedalboard.save!
     # if params['pedal']['value']
@@ -40,8 +40,8 @@ class Api::V1::PedalboardsController < ApplicationController
       render json: pedalboard
     else
       render json: { error: venue.errors.full_messages }, status: :unprocessable_entity
+    end
   end
-end
 
   private
   def pedalboard_params

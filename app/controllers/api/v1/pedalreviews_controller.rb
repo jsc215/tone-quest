@@ -6,7 +6,7 @@ skip_before_action :verify_authenticity_token, only: [:index, :show, :create]
 #   render json: pedalreview
 # end
 
-def create
+  def create
     pedalreview = Pedalreview.new(pedalreview_params)
     # pedalreview.rating.to_i
     pedalreview.user = current_user
