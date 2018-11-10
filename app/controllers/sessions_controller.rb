@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
     # user = User.update_or_create(request.env[&quot;omniauth.auth&quot;])
     session[:id] = user.id
     redirect_to root_path
-    end
+  end
 
-    def destroy
-    session.clear
-    redirect_to root_path
+  def destroy
+  session.clear
+  redirect_to root_path
   end
 end

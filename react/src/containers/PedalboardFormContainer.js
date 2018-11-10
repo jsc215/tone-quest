@@ -4,8 +4,8 @@ import TextField from '../components/TextField';
 import Select from 'react-select';
 import { Async } from 'react-select';
 
-class PedalboardFormContainer extends React.Component{
-  constructor(props){
+class PedalboardFormContainer extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       name: '',
@@ -20,7 +20,7 @@ class PedalboardFormContainer extends React.Component{
     this.setPedalId = this.setPedalId.bind(this);
   }
 
-  setPedalId(pedal){
+  setPedalId(pedal) {
     this.setState({ pedal_id: pedal.value });
   }
 
@@ -32,35 +32,34 @@ class PedalboardFormContainer extends React.Component{
     });
   }
 
-  handlePedalChange(selectedOption){
+  handlePedalChange(selectedOption) {
     this.setState({ selectedOption });
     this.setPedalId(selectedOption);
     console.log(`Selected: ${selectedOption.label} pedal_id: ${selectedOption.value}`);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getOptions();
   }
 
   getOptions() {
     fetch('/api/v1/pedals')
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({
-        pedals: body.pedals
-      });
-    }
-  )
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((response) => response.json())
+      .then((body) => {
+        this.setState({
+          pedals: body.pedals
+        });
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleChange(event) {
@@ -76,22 +75,22 @@ class PedalboardFormContainer extends React.Component{
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(newPedalboard),
-      headers: {'Content-Type': 'application/json'}
+      headers: { 'Content-Type': 'application/json' }
     })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      browserHistory.push(`/pedalboards`);
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+      .then((response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+          throw error;
+        }
+      })
+      .then((response) => response.json())
+      .then((body) => {
+        browserHistory.push(`/pedalboards`);
+      })
+      .catch((error) => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleFormSubmit(event) {
@@ -100,24 +99,24 @@ class PedalboardFormContainer extends React.Component{
       name: this.state.name,
       pedal: this.state.selectedOption
     };
-    if(this.props.params.id){
+    if (this.props.params.id) {
       this.updatePedal(formPayload);
     } else {
       this.addNewPedalboard(formPayload);
     }
   }
-  render(){
-    const{pedals} = this.state;
+  render() {
+    const { pedals } = this.state;
     let pedalOptions;
     let options = [];
     pedalOptions = pedals.map((pedal) => {
-      options.push({value: pedal.id, label: pedal.name});
+      options.push({ value: pedal.id, label: pedal.name });
     });
 
-    return(
+    return (
       <form onSubmit={this.handleFormSubmit}>
-        <div className ='row'>
-          <div className='six columns'>
+        <div className="row">
+          <div className="six columns">
             <TextField
               content={this.state.name}
               label="Pedalboard Name"
@@ -125,15 +124,17 @@ class PedalboardFormContainer extends React.Component{
               onChange={this.handleChange}
             />
             <Select
-              placeholder='Select a Pedal'
+              placeholder="Select a Pedal"
               name="form-field-name"
               value={this.state.selectedOption.value}
               onChange={this.handlePedalChange}
               options={options}
             />
-          <div>
-            <a className="button tiny" onClick={this.handleClearForm}>Clear</a>
-            <input className="button tiny" type="submit" value="Submit" />
+            <div>
+              <a className="button tiny" onClick={this.handleClearForm}>
+                Clear
+              </a>
+              <input className="button tiny" type="submit" value="Submit" />
             </div>
           </div>
         </div>
