@@ -18,6 +18,8 @@ gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'faker'
 gem 'pry-rails'
+gem "nokogiri", ">= 1.10.4"
+
 
 group :test do
   gem 'coveralls', require: false
