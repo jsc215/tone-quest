@@ -28,3 +28,5 @@
 /config/application.yml
 
 package-lock.json
+
+/config/master.key
