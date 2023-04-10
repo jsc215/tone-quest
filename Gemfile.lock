@@ -129,9 +129,10 @@ GEM
     jwt (2.7.0)
     launchy (2.5.2)
       addressable (~> 2.8)
-    listen (3.0.8)
+    listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -178,6 +179,9 @@ GEM
       omniauth-oauth2 (~> 1.8.0)
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
+      omniauth (~> 2.0)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
       omniauth (~> 2.0)
     pg (0.21.0)
     pry (0.14.2)
@@ -252,6 +256,7 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.12.0)
     ruby2_keywords (0.0.5)
+    ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -304,11 +309,11 @@ GEM
       execjs (>= 0.3.0, < 3)
     valid_attribute (2.0.0)
     version_gem (1.1.2)
-    web-console (3.7.0)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
+    web-console (4.2.0)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
-      railties (>= 5.0)
+      railties (>= 6.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -332,7 +337,9 @@ DEPENDENCIES
   launchy
   listen (>= 3.0.5, < 3.2)
   nokogiri (>= 1.10.4)
+  omniauth
   omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pg (~> 0.18)
   pry
   pry-rails
@@ -352,8 +359,5 @@ DEPENDENCIES
   valid_attribute
   web-console (>= 3.3.0)
 
-RUBY VERSION
-   ruby 3.1.0p0
-
 BUNDLED WITH
-   2.4.10
+   2.3.7
