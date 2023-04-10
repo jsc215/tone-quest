@@ -5,24 +5,23 @@ source 'https://rubygems.org'
 #   "https://github.com/#{repo_name}.git"
 # end
 gem 'active_model_serializers'
+gem 'faker'
+gem 'figaro'
 gem 'foundation-rails'
+gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'nokogiri', '>= 1.10.4'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'pg', '~> 0.18'
 gem 'pry'
+gem 'pry-rails'
 gem 'puma', '~> 4.3'
 gem 'rails', '~> 6.0.0'
 gem 'rake', '~> 13.0.6'
-gem 'jbuilder', '~> 2.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'omniauth-google-oauth2'
-gem 'omniauth'
-gem 'omniauth-rails_csrf_protection'
-gem 'figaro'
-gem 'faker'
-gem 'pry-rails'
-gem "nokogiri", ">= 1.10.4"
-
 
 group :test do
   gem 'coveralls', require: false
@@ -31,8 +30,8 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
-  gem 'web-console', '>= 3.3.0'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
@@ -46,10 +45,10 @@ group :development, :test do
   gem 'valid_attribute'
 end
 
-  group :production do
-    gem 'rails_12factor'
-  end
+group :production do
+  gem 'rails_12factor'
+end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # ruby '2.5.0'
