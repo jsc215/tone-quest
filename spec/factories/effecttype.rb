@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :effecttype do
     # sequence(:name) { |n| "Overdrive #{n}" }
-    name 'Overdrive'
+    name {'Overdrive'}
   end
 end
